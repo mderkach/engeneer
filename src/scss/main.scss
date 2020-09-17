@@ -1,0 +1,15 @@
+@use './utils/mixins' as *;
+
+// global rules
+button {
+  padding: 0;
+  background-color: transparent;
+}
+
+.is-modal-open {
+  overflow-y: hidden;
+}
+
+.icon {
+  @include size(rem(30));
+}

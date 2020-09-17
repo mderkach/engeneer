@@ -1,0 +1,19 @@
+header.header
+  +wrapper('header')
+    .header__upper
+      .header__upper_inner
+        .header__upper-cell
+          .header__upper-cell_top
+            +icon('icon', 'phone')
+            a.header__upper-cell_link.text-regular(href="tel:+74957617146") +7 (495) 761-71-46
+          p.header__upper-cell_descr.text-small.light Заказать обратный звонок
+        .header__upper-cell
+          .header__upper-cell_top
+            +icon('icon', 'mail')
+            a.header__upper-cell_link.text-regular(href="mailto: info@tс-engineer.ru") info@tс-engineer.ru
+        .header__upper-cell
+          .header__upper-cell_top
+            +icon('icon', 'wa')
+            a.header__upper-cell_link.text-regular(href="tel:+74957617146") Написать в WhatsApp
+    +icon('header__logo', 'logo')
+    p.header__descr Экспертные решения в области информационной безопасности, IT и непрерывности деятельности. Подготовка к сертификации

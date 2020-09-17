@@ -1,0 +1,36 @@
+/* Vars:
+   ========================================================================== */
+
+// Font
+$mainFont: 'Roboto', sans-serif;
+$mainFontSize: 16px;
+$mainLineHeight: 1.35;
+$mainFontWeight: normal;
+$mainFontColor: #101010;
+
+//colors
+$white: #fff;
+$black: #000;
+$gray: #5d5d5d;
+
+//hamburger
+
+// grid
+$grid-desktop: 12;
+$grid-desktop-gap-col: 30px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200px,
+  xxl: 1380px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px,
+);

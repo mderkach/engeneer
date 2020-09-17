@@ -1,0 +1,37 @@
+@use 'vars' as *;
+@use 'libs' as *;
+@use 'mixins' as *;
+
+.text {
+  &-regular {
+    font-style: normal;
+    font-weight: normal;
+    @include font-size(18);
+  }
+
+  &-small {
+    font-style: normal;
+    font-weight: normal;
+    @include font-size(12);
+  }
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.inherit-weight {
+  font-weight: inherit;
+}
+
+.inherit-size {
+  font-size: inherit;
+}

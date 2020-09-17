@@ -1,0 +1,11 @@
+extends ../layout/main
+
+block variables
+  - title = 'Engeneer';
+  - description = '';
+  - slug = 'index'
+  - pageClass = slug + '-page';
+
+block content
+  +wrapper(slug)
+    h1 hi

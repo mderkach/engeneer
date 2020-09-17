@@ -1,0 +1,72 @@
+@use 'src/scss/utils/utils' as *;
+
+.header {
+  padding: 45px 0 48px;
+
+  &__container {
+    @include make-grid-container-max-widths();
+    @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+  }
+
+  &__upper {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    width: 100%;
+    @include make-grid-row();
+
+    &_inner {
+      @include make-col-position(2, -1);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-left: rem(20);
+    }
+
+    &-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &_top {
+        display: flex;
+        align-items: center;
+      }
+
+      &_link {
+        display: block;
+        margin-left: rem(4);
+        margin-bottom: rem(2);
+        color: #000;
+      }
+
+      &_descr {
+        color: #bdbdbd;
+      }
+    }
+  }
+
+  &__logo {
+    @include make-col-size(3, 1);
+    max-height: 128px;
+  }
+
+  &__descr {
+    position: relative;
+    @include make-col-position(5, -1);
+    margin-top: rem(16);
+    padding-left: rem(58);
+    @include font-size(30);
+    color: #000000;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: #e10303;
+    }
+  }
+}

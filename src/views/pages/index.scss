@@ -6,7 +6,10 @@
 
 .index {
   &__container {
-    @include make-grid-container-max-widths();
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include make-grid-container-max-widths(
+      $max-widths: $container-max-widths,
+      $breakpoints: $grid-breakpoints
+    );
   }
 }

@@ -1,12 +1,44 @@
 .toolbar
   +wrapper('toolbar')
     .toolbar__item
-      p.toolbar__item-descr Услуги
+      a.toolbar__item-descr(href="#") Услуги
+      .toolbar__item-dropdown
+        .toolbar__item-dropdown-block
+          p.toolbar__item-dropdown-header Управление ИБ
+          .toolbar__item-dropdown-menu
+            a.toolbar__item-dropdown-link(href="#") Внедрение ISO 27001
+            a.toolbar__item-dropdown-link(href="#") Приведение в соответствие GDPR
+            a.toolbar__item-dropdown-link(href="#") Приведение в соответствие 187-ФЗ
+            a.toolbar__item-dropdown-link(href="#") Защита информации финансовых организаций по ГОСТ 57580.1
+            a.toolbar__item-dropdown-link(href="#") Экспертный аудит и разработка стратегии ИБ
+            a.toolbar__item-dropdown-link(href="#") Оценка рисков ИБ
+            a.toolbar__item-dropdown-link(href="#") Внедрение BSI IT Grundschutz
+            a.toolbar__item-dropdown-link(href="#") Приведение в соответствие 152-ФЗ
+            a.toolbar__item-dropdown-link(href="#") Приведение в соответствие Microsoft DPR
+        .toolbar__item-dropdown-block
+          p.toolbar__item-dropdown-header Управление непрерывностью бизнеса
+          .toolbar__item-dropdown-menu
+            a.toolbar__item-dropdown-link(href="#") Внедрение ISO 22301
+          p.toolbar__item-dropdown-header Управление непрерывностью бизнеса
+          .toolbar__item-dropdown-menu
+            a.toolbar__item-dropdown-link(href="#") Внедрение ISO 22301Внедрение ISO 20000
+            a.toolbar__item-dropdown-link(href="#") Экспертный аудит и разработка стратегии ИТ
+
     .toolbar__item
-      p.toolbar__item-descr Повышение осведомленности
+      a.toolbar__item-descr(href="#") Повышение осведомленности
+      .toolbar__item-dropdown
+        .toolbar__item-dropdown-block
+          p.toolbar__item-dropdown-header Повышение осведомленности
+          .toolbar__item-dropdown-menu
+            a.toolbar__item-dropdown-link(href="#") Разработка и дизайн интерактивных курсов по индивидуальным задачам
+            a.toolbar__item-dropdown-link(href="#") Разработка и  дизайн обучающих материалов
+            a.toolbar__item-dropdown-link(href="#") Портал – комплексные проекты
+            a.toolbar__item-dropdown-link(href="#") Очное и дистанционное обучение персонала по стандартам
+            a.toolbar__item-dropdown-link(href="#") Подготовка и проведение мероприятий
+
     .toolbar__item
-      p.toolbar__item-descr О нас
+      a.toolbar__item-descr(href="#") О нас
     .toolbar__item
-      p.toolbar__item-descr Контакты
+      a.toolbar__item-descr(href="#") Контакты
     .toolbar__item
       +icon('icon', 'loop')

@@ -56,7 +56,7 @@
     margin-top: rem(16);
     padding-left: rem(58);
     @include font-size(30);
-    color: #000000;
+    color: $black;
 
     &::before {
       position: absolute;
@@ -66,7 +66,7 @@
       display: block;
       width: 1px;
       height: 100%;
-      background-color: #e10303;
+      background-color: $red;
     }
   }
 }

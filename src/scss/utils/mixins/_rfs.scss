@@ -1,3 +1,4 @@
+@use '../_vars' as *;
 // stylelint-disable property-blacklist, scss/dollar-variable-default
 
 // SCSS RFS mixin
@@ -9,7 +10,7 @@
 // Configuration
 
 // Base font size
-$rfs-base-font-size: 1.25rem !default;
+$rfs-base-font-size: $mainFontSize !default;
 $rfs-font-size-unit: rem !default;
 
 // Breakpoint at where font-size starts decreasing if screen width is smaller
@@ -33,7 +34,7 @@ $rfs-class: false !default;
 $rfs-rem-value: 16 !default;
 
 // Safari iframe resize bug: https://github.com/twbs/rfs/issues/14
-$rfs-safari-iframe-resize-bug-fix: false !default;
+$rfs-safari-iframe-resize-bug-fix: true !default;
 
 // Disable RFS by setting $enable-responsive-font-sizes to false
 $enable-responsive-font-sizes: true !default;

@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: 4fr 8fr;
     width: 100%;
-    @include make-grid-row();
+    @include make-col-fluid();
 
     &_inner {
       @include make-col-position(2, -1);

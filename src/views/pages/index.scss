@@ -42,13 +42,84 @@
 
   &__btn {
     @include make-col-size(4, 1);
-    @include make-new-grid-row(2);
-    display: block;
+    @include make-grid-row(2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding: rem(10) 0;
     border-radius: 3px;
     background-color: $red;
     @include font-size(20);
     color: $white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__cards {
+    padding: rem(60) 0;
+    background-color: $grayBg;
+
+    .container {
+      gap: rem($grid-desktop-gap-row) rem($grid-desktop-gap-col);
+      grid-auto-rows: rem(250);
+    }
+
+    &-item {
+      @include make-col-size(4, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: rem(30);
+      background: $white;
+      border: 1px solid #e8e9eb;
+      border-radius: 3px;
+
+      &:hover {
+        box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+      }
+
+      &:first-child {
+        justify-content: space-between;
+      }
+
+      &_fluid {
+        @include make-col-fluid();
+        display: grid;
+        grid-template-columns: 3fr 1fr 8fr;
+        gap: rem(30);
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &-left {
+        @include make-col-position(1, 1);
+        padding: rem(40) 0 rem(40) rem(30);
+      }
+
+      &-right {
+        @include make-col-position(3, 3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: rem(25) 0 rem(25) rem(30);
+      }
+
+      &-header {
+        margin-top: rem(10);
+        @include font-size(20);
+      }
+
+      &-descr {
+        @include font-size(12);
+      }
+
+      .btn-small {
+        max-width: (125/310) * 100%;
+        @include font-size(12);
+      }
+    }
   }
 }

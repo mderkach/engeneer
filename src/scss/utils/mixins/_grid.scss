@@ -166,7 +166,7 @@
   }
 }
 
-@mixin make-col-size($col, $row) {
+@mixin make-col-size($col, $row: span) {
   grid-column: span $col;
   @if ($row) {
     grid-row: span $row;
@@ -175,4 +175,8 @@
 
 @mixin make-grid-row() {
   grid-column: 1 / -1;
+}
+
+@mixin make-new-grid-row($row) {
+  grid-row: $row / $row + 1;
 }

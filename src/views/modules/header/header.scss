@@ -46,7 +46,7 @@
   }
 
   &__logo {
-    @include make-col-size(3, 1);
+    @include make-col-size(3, 2);
     max-height: 128px;
   }
 

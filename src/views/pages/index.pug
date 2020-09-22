@@ -21,16 +21,10 @@ block content
         a.btn.btn-small.index__btn(href="#") Подробнее
       .index__cards-item
         +icon('icon-big', 'collab')
-        p.index__cards-item-header Непрерывность бизнеса
-      .index__cards-item
-        +icon('icon-big', 'idea')
-        p.index__cards-item-header Обучение сотрудников
-      .index__cards-item
-        +icon('icon-big', 'portals')
-        p.index__cards-item-header Разработка порталов в сфере ИБ
-      .index__cards-item
-        +icon('icon-big', 'award')
-        p.index__cards-item-header Управление качеством
+        p.index__cards-item-header
+          | Управление
+          br
+          | непрерывностью бизнеса
       .index__cards-item
         +icon('icon-big', 'supp')
         p.index__cards-item-header Управление ИТ
@@ -38,7 +32,81 @@ block content
         .index__cards-item-left
           +icon('icon-big', 'focus')
           p.index__cards-item-header Повышение осведомленности
+        +icon('index__cards-item-chevron', 'chevron')
         .index__cards-item-right
           p.index__cards-item-header Разработка и дизайн интерактивных курсов по индивидуальным задачам
           p.index__cards-item-header Разработка и дизайн обучающих материалов
           p.index__cards-item-header Портал – комплексные проекты
+  section.index__order
+    +pic('index__banner-bg', './assets/img/back-gradient.jpg')
+    +pic('index__banner-bg_upper', './assets/img/man.png')
+    +wrapper(slug)
+     +form(
+      'index__order-form',
+      'Заказать <br> бесплатную консультацию',
+      'Оставьте свои контакты,  мы перезвоним через несколько минут',
+      [
+        {
+          type: 'text',
+          name: 'name',
+          placeholder: 'Ваше имя'
+        },
+        {
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон'
+        }
+      ],
+      'Бесплатная консультация',
+     )
+  section.index__company
+    +wrapper(slug)
+      h2.h2.index__heading.index__company-header
+        |Компания
+        span.inherit-size.inherit-weight  Engineer
+      .index__company-card
+        p.index__company-card-header 30+
+        p.index__company-card-descr
+          | Выполненных проектов по
+          br
+          | ISO27001 за последние 5 лет
+      .index__company-card
+        p.index__company-card-header 85%
+        p.index__company-card-descr
+          | Компаний заключили договор
+          br
+          | на продление сотрудничества
+      .index__company-card
+        p.index__company-card-header 20 лет
+        p.index__company-card-descr
+          | В сфере ИБ
+  section.index__certificates
+    +wrapper(slug)
+      h2.h2.index__heading Сертификаты
+      +pic('index__certificates-img', './assets/img/cert-1.png')
+      +pic('index__certificates-img', './assets/img/cert-2.png')
+  section.index__callback
+    +pic('index__banner-bg', './assets/img/back-gradient.jpg')
+    +pic('index__callback-bg_upper', './assets/img/notebook.png')
+    +wrapper(slug)
+     +form(
+      'index__order-form',
+      'Заказать обратный звонок',
+      false,
+      [
+        {
+          type: 'text',
+          name: 'name',
+          placeholder: 'Ваше имя'
+        },
+        {
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон'
+        }
+      ],
+      'Перезвоните мне',
+     )
+  section.index__projects
+    +wrapper(slug)
+      h2.h2.index__heading Сертификаты

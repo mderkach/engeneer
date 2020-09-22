@@ -2,17 +2,23 @@
 @use 'libs' as *;
 @use 'mixins' as *;
 
+.h2 {
+  @include font-size(30);
+}
+
 .text {
   &-regular {
-    font-style: normal;
-    font-weight: normal;
     @include font-size(18);
+
+    font-weight: normal;
+    font-style: normal;
   }
 
   &-small {
-    font-style: normal;
-    font-weight: normal;
     @include font-size(12);
+
+    font-weight: normal;
+    font-style: normal;
   }
 }
 

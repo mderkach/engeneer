@@ -19,6 +19,7 @@
 //    md
 //    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
 //    md
+
 @function breakpoint-next(
   $name,
   $breakpoints: $grid-breakpoints,
@@ -32,6 +33,7 @@
 //
 //    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    576px
+
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
   $min: map-get($breakpoints, $name);
   @return if($min != 0, $min, null);
@@ -46,6 +48,7 @@
 //
 //    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    767.98px
+
 @function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
   $next: breakpoint-next($name, $breakpoints);
   @return if($next, breakpoint-min($next, $breakpoints) - 0.02, null);
@@ -58,12 +61,14 @@
 //    ""  (Returns a blank string)
 //    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    "-sm"
+
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
   @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
 }
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
+
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
   @if $min {
@@ -77,6 +82,7 @@
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
+
 @mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
   $max: breakpoint-max($name, $breakpoints);
   @if $max {
@@ -90,10 +96,10 @@
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
+
 @mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($lower, $breakpoints);
   $max: breakpoint-max($upper, $breakpoints);
-
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
       @content;
@@ -112,10 +118,10 @@
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+
 @mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
   $max: breakpoint-max($name, $breakpoints);
-
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
       @content;
@@ -130,7 +136,6 @@
     }
   }
 }
-
 @mixin make-grid-container($cols, $col-gap, $row-gap: 0, $context: $mainFontSize) {
   // implicity of rem function
   $row: 0;
@@ -153,13 +158,11 @@
   margin-right: auto;
   margin-left: auto;
 }
-
 @mixin make-container() {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
-
 @mixin make-grid-container-max-widths(
   $max-widths: $container-max-widths,
   $breakpoints: $grid-breakpoints
@@ -170,27 +173,25 @@
     }
   }
 }
-
 @mixin make-col-position($start, $end) {
-  grid-column-start: $start;
   @if ($end < 0) {
     grid-column-end: -1;
   } @else {
     grid-column-end: $end + 1;
   }
-}
 
+  grid-column-start: $start;
+}
 @mixin make-col-size($col, $row: span) {
-  grid-column: span $col;
   @if ($row) {
     grid-row: span $row;
   }
-}
 
+  grid-column: span $col;
+}
 @mixin make-col-fluid() {
   grid-column: 1 / -1;
 }
-
 @mixin make-grid-row($row) {
   grid-row: $row / $row + 1;
 }

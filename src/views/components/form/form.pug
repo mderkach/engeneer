@@ -1,0 +1,20 @@
+mixin form(className, header, descr, inputs, btnText)
+  - className = className || null;
+  - descr = descr || null;
+  form.form(action="#" method="post" class=className)
+    h2.h2.form-header
+      | !{ header }
+    if descr
+      p.form-descr
+        | !{ descr }
+    .form-body
+      each input in inputs
+        input.form-input(
+          type=input.type
+          name=input.name
+          placeholder=input.placeholder
+          onfocus="this.placeholder=''"
+          onblur=`this.paceholder='${input.placeholder}'`
+        )
+      p.form-agreement Нажимая на кнопку, вы даете согласие на Обработку персональных данных
+      button.btn.form-submit(type="submit") !{ btnText }

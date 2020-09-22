@@ -8,6 +8,8 @@
 		"build": "npm run webp && webpack --config ./build/webpack.build.conf.js",
 		"lint": "eslint --debug src/",
 		"lint:write": "eslint --debug src/ --fix",
+		"stylelint": "stylelint ./src/**/*.scss",
+		"stylelint:write": "stylelint ./src/**/*.scss --fix",
 		"webp": "node ./build/webpack.webp.js"
 	},
 	"browserslist": [
@@ -74,8 +76,8 @@
 		"husky": "^4.3.0",
 		"image-webpack-loader": "^7.0.0",
 		"lint-staged": "^10.4.0",
-    "mini-css-extract-plugin": "^0.11.2",
-    "postcss": "^8.0.5",
+		"mini-css-extract-plugin": "^0.11.2",
+		"postcss": "^8.0.5",
 		"postcss-loader": "^4.0.2",
 		"postcss-move-props-to-bg-image-query": "^4.0.0",
 		"prettier": "^2.1.2",
@@ -85,8 +87,13 @@
 		"sass-loader": "^10.0.2",
 		"style-loader": "^1.2.1",
 		"stylelint": "^13.7.1",
+		"stylelint-config-hudochenkov": "^5.0.0",
 		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-config-sass-guidelines": "^7.1.0",
+		"stylelint-order": "^4.1.0",
 		"stylelint-prettier": "^1.1.2",
+		"stylelint-scss": "^3.18.0",
+		"stylelint-webpack-plugin": "^2.1.0",
 		"svg-sprite-loader": "^5.0.0",
 		"svg-transform-loader": "^2.0.13",
 		"svgo": "^1.3.2",
@@ -101,6 +108,7 @@
 	"dependencies": {
 		"bootstrap": "^4.5.2",
 		"hamburgers": "^1.1.3",
+		"inputmask": "^5.0.5",
 		"swiper": "^6.2.0"
 	}
 }

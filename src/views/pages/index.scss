@@ -1,18 +1,28 @@
 // utils
+
 @use 'src/scss/utils/utils' as *;
 // components
+
 @use 'src/views/modules/header/header';
 @use 'src/views/modules/toolbar/toolbar';
 
 .index {
   &__container {
-    position: relative;
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
     @include make-grid-container-max-widths(
       $max-widths: $container-max-widths,
       $breakpoints: $grid-breakpoints
     );
+
+    position: relative;
     z-index: 1;
+  }
+
+  &__heading {
+    @include make-col-fluid();
+
+    margin-bottom: rem(50);
+    text-align: center;
   }
 
   &__banner {
@@ -23,14 +33,32 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 0;
       display: block;
       width: 100%;
       height: 100%;
-      z-index: 0;
+
+      &_upper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        max-width: rem(760);
+        height: 100%;
+        pointer-events: none;
+        user-select: none;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+      }
 
       img {
-        height: 100%;
         object-fit: cover;
+        height: 100%;
       }
     }
   }
@@ -43,14 +71,15 @@
   &__btn {
     @include make-col-size(4, 1);
     @include make-grid-row(2);
+    @include font-size(20);
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     padding: rem(10) 0;
     border-radius: 3px;
     background-color: $red;
-    @include font-size(20);
     color: $white;
 
     &:hover {
@@ -63,22 +92,23 @@
     background-color: $grayBg;
 
     .container {
-      gap: rem($grid-desktop-gap-row) rem($grid-desktop-gap-col);
       grid-auto-rows: rem(250);
+      gap: rem($grid-desktop-gap-row) rem($grid-desktop-gap-col);
     }
 
     &-item {
       @include make-col-size(4, 1);
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: rem(30);
-      background: $white;
       border: 1px solid #e8e9eb;
       border-radius: 3px;
+      background: $white;
 
       &:hover {
-        box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+        box-shadow: 0 16px 16px rgba(50, 50, 71, 0.08), 0 24px 32px rgba(50, 50, 71, 0.08);
       }
 
       &:first-child {
@@ -87,20 +117,24 @@
 
       &_fluid {
         @include make-col-fluid();
+
         display: grid;
         grid-template-columns: 3fr 1fr 8fr;
         gap: rem(30);
-        padding-left: 0;
+        align-items: center;
         padding-right: 0;
+        padding-left: 0;
       }
 
       &-left {
         @include make-col-position(1, 1);
+
         padding: rem(40) 0 rem(40) rem(30);
       }
 
       &-right {
         @include make-col-position(3, 3);
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -108,8 +142,9 @@
       }
 
       &-header {
-        margin-top: rem(10);
         @include font-size(20);
+
+        margin-top: rem(10);
       }
 
       &-descr {
@@ -117,9 +152,117 @@
       }
 
       .btn-small {
-        max-width: (125/310) * 100%;
         @include font-size(12);
+
+        max-width: (125/310) * 100%;
+      }
+
+      &-chevron {
+        max-width: rem(20);
+        height: 100%;
+        max-height: rem(115);
+        margin-left: rem(20);
       }
     }
+  }
+
+  &__order {
+    position: relative;
+    padding: rem(100) 0 rem(105);
+
+    &-form {
+      @include make-col-size(7, 1);
+    }
+  }
+
+  &__company {
+    padding: rem(60) 0 rem(75);
+    background-color: $grayBg;
+
+    &-header {
+      span {
+        color: $red;
+      }
+    }
+
+    &-card {
+      @include make-col-size(4, 1);
+
+      padding: 30px 30px 50px;
+      border: 1px solid #e8e9eb;
+      border-radius: 3px;
+      background: #fff;
+
+      &-header {
+        @include font-size(55);
+
+        margin-bottom: rem(10);
+        color: $red;
+      }
+
+      &-descr {
+        @include font-size(20);
+      }
+    }
+  }
+
+  &__certificates {
+    padding: rem(60) 0;
+
+    .container {
+      gap: 0;
+    }
+
+    &-img {
+      @include make-col-size(3, 1);
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: rem(270);
+        height: auto;
+        margin: 0 auto;
+        border: 1px solid #e8e9eb;
+        border-radius: 3px;
+        box-shadow: 0 8px 16px rgba(50, 50, 71, 0.06);
+      }
+
+      &:first-of-type {
+        @include make-col-position(3, 6);
+      }
+
+      &:last-of-type {
+        @include make-col-position(7, 10);
+      }
+    }
+  }
+
+  &__callback {
+    position: relative;
+    padding: rem(120) 0 rem(130);
+
+    &-bg {
+      &_upper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+        width: auto;
+        height: 100%;
+        max-height: rem(525);
+        pointer-events: none;
+        user-select: none;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &__projects {
+    padding: rem(60) 0;
   }
 }

@@ -6,9 +6,10 @@
   &__container {
     @include make-grid-container-max-widths();
     @include make-container();
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 0;
   }
 
@@ -30,8 +31,9 @@
     }
 
     &-descr {
-      color: $black;
       @include font-size(20);
+
+      color: $black;
     }
 
     &-dropdown {
@@ -54,7 +56,7 @@
 
         &:last-child {
           padding-right: 0;
-          border: none;
+          border: 0;
         }
 
         ~ div {
@@ -73,9 +75,10 @@
       }
 
       &-link {
+        @include font-size(12);
+
         display: block;
         margin-bottom: rem(12);
-        @include font-size(12);
         color: #313638;
 
         &:hover {

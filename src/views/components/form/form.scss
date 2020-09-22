@@ -1,0 +1,58 @@
+@use 'src/scss/utils/utils' as *;
+
+.form {
+  padding: 0 rem(25);
+
+  &-header {
+    margin-bottom: rem(5);
+  }
+
+  &-descr {
+    @include font-size(20);
+
+    margin-bottom: rem(16);
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(10);
+  }
+
+  &-input {
+    @include font-size(12);
+
+    display: block;
+    width: 100%;
+    padding: rem(16);
+    border: 1px solid #e8e9eb;
+    border-radius: 3px;
+    background-color: $white;
+    color: #313638;
+  }
+
+  &-agreement {
+    @include font-size(12);
+    @include make-col-fluid();
+
+    color: #828282;
+  }
+
+  &-submit {
+    @include font-size(20);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: rem(6);
+    padding: rem(10) 0;
+    border-radius: 3px;
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

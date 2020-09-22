@@ -24,7 +24,7 @@ $rfs-two-dimensional: false !default;
 $rfs-factor: 10 !default;
 
 @if type-of($rfs-factor) != 'number' or $rfs-factor <= 1 {
-  @error "`#{$rfs-factor}` is not a valid  $rfs-factor, it must be greater than 1.";
+  @error '`#{$rfs-factor}` is not a valid  $rfs-factor, it must be greater than 1.';
 }
 
 // Generate enable or disable classes. Possibilities: false, "enable" or "disable"
@@ -88,11 +88,12 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
     } @else if $rfs-font-size-unit == px {
       $rfs-static: #{$fs}px#{$rfs-suffix};
     } @else {
-      @error "`#{$rfs-font-size-unit}` is not a valid unit for $rfs-font-size-unit. Use `px` or `rem`.";
+      @error '`#{$rfs-font-size-unit}` is not a valid unit for $rfs-font-size-unit. Use `px` or `rem`.';
     }
 
     // Only add media query if font-size is bigger as the minimum font-size
     // If $rfs-factor == 1, no rescaling will take place
+
     @if $fs > $rfs-base-font-size and $enable-responsive-font-sizes {
       $min-width: null;
       $variable-unit: null;
@@ -130,7 +131,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
       } @else if $rfs-breakpoint-unit == px {
         $mq-value: #{$rfs-breakpoint}px;
       } @else {
-        @error "`#{$rfs-breakpoint-unit}` is not a valid unit for $rfs-breakpoint-unit. Use `px`, `em` or `rem`.";
+        @error '`#{$rfs-breakpoint-unit}` is not a valid unit for $rfs-breakpoint-unit. Use `px`, `em` or `rem`.';
       }
 
       @if $rfs-class == 'disable' {

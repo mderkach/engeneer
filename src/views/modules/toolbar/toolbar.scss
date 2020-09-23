@@ -39,6 +39,7 @@
     &-dropdown {
       position: absolute;
       left: 0;
+      z-index: 99;
       display: none;
       padding: rem(34) rem(32);
       background-color: $grayBg;

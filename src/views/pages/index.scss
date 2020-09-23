@@ -21,6 +21,9 @@
 
   &__heading {
     @include make-col-fluid();
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(20);
+    }
 
     margin-bottom: rem(50);
     text-align: center;
@@ -67,6 +70,9 @@
   &__header {
     @include make-col-size(4, 1);
     @include font-size(55);
+    @include media-breakpoint-down(lg) {
+      @include make-col-size(6, 1);
+    }
   }
 
   &__btn {
@@ -93,12 +99,19 @@
     background-color: $grayBg;
 
     .container {
+      @include media-breakpoint-down(lg) {
+        @include make-grid-container(1, $grid-desktop-gap-col, $grid-desktop-gap-row);
+      }
+
       grid-auto-rows: rem(250);
       gap: rem($grid-desktop-gap-row) rem($grid-desktop-gap-col);
     }
 
     &-item {
       @include make-col-size(4, 1);
+      @include media-breakpoint-down(lg) {
+        @include make-col-fluid();
+      }
 
       display: flex;
       flex-direction: column;
@@ -173,12 +186,21 @@
 
     &-form {
       @include make-col-size(7, 1);
+      @include media-breakpoint-down(lg) {
+        @include make-col-fluid();
+      }
     }
   }
 
   &__company {
     padding: rem(60) 0 rem(75);
     background-color: $grayBg;
+
+    .container {
+      @include media-breakpoint-down(lg) {
+        @include make-grid-container(1, $grid-desktop-gap-col, $grid-desktop-gap-row);
+      }
+    }
 
     &-header {
       span {
@@ -188,6 +210,9 @@
 
     &-card {
       @include make-col-size(4, 1);
+      @include media-breakpoint-down(lg) {
+        @include make-col-fluid();
+      }
 
       padding: 30px 30px 50px;
       border: 1px solid #e8e9eb;
@@ -211,11 +236,18 @@
     padding: rem(60) 0;
 
     .container {
+      @include media-breakpoint-down(lg) {
+        @include make-grid-container(1, $grid-desktop-gap-col, $grid-desktop-gap-row);
+      }
+
       gap: 0;
     }
 
     &-img {
       @include make-col-size(3, 1);
+      @include media-breakpoint-down(lg) {
+        @include make-col-fluid();
+      }
 
       img {
         display: block;
@@ -230,10 +262,16 @@
 
       &:first-of-type {
         @include make-col-position(3, 6);
+        @include media-breakpoint-down(lg) {
+          @include make-col-fluid();
+        }
       }
 
       &:last-of-type {
         @include make-col-position(7, 10);
+        @include media-breakpoint-down(lg) {
+          @include make-col-fluid();
+        }
       }
     }
   }

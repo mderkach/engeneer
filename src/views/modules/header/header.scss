@@ -6,6 +6,9 @@
   &__container {
     @include make-grid-container-max-widths();
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include media-breakpoint-down(lg) {
+      @include make-grid-container($grid-desktop, $grid-desktop-gap-col, $grid-desktop-gap-row);
+    }
   }
 
   &__upper {
@@ -17,6 +20,12 @@
 
     &_inner {
       @include make-col-position(2, -1);
+      // media
+      @include media-breakpoint-down(lg) {
+        @include make-col-fluid();
+
+        padding-left: 0;
+      }
 
       display: flex;
       align-items: flex-start;
@@ -48,7 +57,7 @@
   }
 
   &__logo {
-    @include make-col-size(3, 2);
+    @include make-col-size(4, 2);
 
     max-height: 128px;
   }

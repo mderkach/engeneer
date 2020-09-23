@@ -20,6 +20,7 @@ const slider = {
       bulletClass: 'slider-bullet',
       bulletActiveClass: 'is-active',
       hiddenClass: 'is-hidden',
+      clickable: true,
     },
   },
   init() {

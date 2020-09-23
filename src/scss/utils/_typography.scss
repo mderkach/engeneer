@@ -6,6 +6,10 @@
   @include font-size(30);
 }
 
+.h3 {
+  @include font-size(18);
+}
+
 .text {
   &-regular {
     @include font-size(18);

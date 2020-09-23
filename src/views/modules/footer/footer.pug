@@ -1,0 +1,42 @@
+footer.footer
+  .footer__upper
+    +wrapper('footer')
+      .footer__cell
+        h3.h3.footer__cell-header Наши услуги
+        .footer__cell-menu
+          a.footer__cell-link(href="#") Экспертиза в области ИБ
+          a.footer__cell-link(href="#") Непрерывность бизнеса
+          a.footer__cell-link(href="#") Управление качеством
+          a.footer__cell-link(href="#") Управление ИТ
+          a.footer__cell-link(href="#") Повышение осведомленности
+      .footer__cell
+        h3.h3.footer__cell-header Контакты
+        .footer__cell-menu
+          a.footer__cell-link(href="tel:+74957617146") +7 (495) 761-71-46
+          a.footer__cell-link(href="mailto:info@tс-engineer.ru") info@tс-engineer.ru
+          a.footer__cell-link(href="#") Написать в WhatsApp
+          a.footer__cell-link(href="#") Присоединиться к нам в
+            +icon('footer__cell-link-icon', 'fb')
+      .footer__cell
+        h3.h3.footer__cell-header О компании
+        .footer__cell-text АО Технический центр «Инженер»
+        .footer__cell-text БЦ "Сильвер стоун" 129343 г.Москва, проезд Серебрякова, д.14, строение 23, 2 этаж, офис 18. м.Ботанический сад
+        form.footer__form(action="#" method="post")
+          .footer__cell-text Подписаться на полезную авторскую рассылку
+          .footer-row
+            input.footer__form-input(
+              type="email"
+              name="email"
+              placeholder="Email"
+              onfocus="this.placeholder=''"
+              onblur=`this.paceholder='Email'`
+            )
+            button.footer__form-submit(type="submit") Отправить
+  .footer__lower
+    .container
+      .footer-row
+        p.footer__cell-text Другие сайты группы компаний: phishman.ru - автоматизированная система тестирования и обучения сотрудников
+        a.footer__cell-link(href="#") Политика конфиденциальности
+      .footer-row
+        p.footer__cell-text © 2020 АО «ТЦ «Инженер». Все права защищены
+        a.footer__cell-link(href="#") Политика обработки персональных данных

@@ -24,6 +24,7 @@ module.exports = {
     'selector-max-compound-selectors': null,
     'no-descending-specificity': null,
     'scss/dollar-variable-pattern': null,
+    'scss/at-extend-no-missing-placeholder': null,
     'block-closing-brace-newline-after': [
       'always',
       {

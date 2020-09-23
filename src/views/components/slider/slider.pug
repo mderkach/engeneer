@@ -1,0 +1,7 @@
+.slider
+  .slider-wrapper
+    each index in [1,2,3,4]
+      .slider-slide
+        each index in [1,2,3,4,5,6,7,8,9,10,11,12]
+          +pic('slider-slide-img', 'assets/img/slider/' + index + '.png')
+  .slider-pagination

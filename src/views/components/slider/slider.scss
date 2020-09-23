@@ -1,0 +1,57 @@
+@use 'src/scss/utils/utils' as *;
+
+@import 'swiper/swiper';
+
+.slider {
+  @include make-col-fluid();
+  @extend .swiper-container;
+
+  width: 100%;
+
+  &-wrapper {
+    @include make-col-fluid();
+    @extend .swiper-wrapper;
+
+    width: 100%;
+  }
+
+  &-slide {
+    @extend .swiper-slide;
+    @include make-grid-container(4, $grid-desktop-gap-col, $grid-desktop-gap-row);
+
+    grid-auto-rows: rem(120);
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e8e9eb;
+      background: #fff;
+
+      img {
+        display: block;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: rem(40);
+  }
+
+  &-bullet {
+    @include size(rem(15));
+
+    margin: 0 rem(9);
+    border-radius: 50%;
+    background-color: #e8e9eb;
+
+    &.is-active {
+      background-color: $red;
+    }
+  }
+}

@@ -55,7 +55,6 @@
 
   &__descr {
     @include make-col-position(5, -1);
-
     @include font-size(30);
 
     position: relative;

@@ -1,0 +1,103 @@
+@use 'src/scss/utils/utils' as *;
+
+.footer {
+  &__upper {
+    padding: rem(40) 0 rem(25);
+    background: #313638;
+  }
+
+  &__lower {
+    padding: rem(27) 0 rem(30 - 12);
+    background: #4f4f4f;
+
+    .footer__cell {
+      &-text,
+      &-link {
+        margin-bottom: rem(12);
+      }
+    }
+  }
+
+  .container {
+    @include make-container();
+    @include make-grid-container-max-widths();
+  }
+
+  &__container {
+    @include make-grid-container(3, $grid-desktop-gap-col);
+  }
+
+  &__cell {
+    &-header {
+      margin-bottom: rem(45);
+      color: #fff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(25);
+      color: #fff;
+      font-size: rem(14);
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+        cursor: pointer;
+      }
+
+      &-icon {
+        @include size(rem(24));
+      }
+    }
+
+    &-text {
+      margin-bottom: rem(25);
+      color: #fff;
+      font-size: rem(14);
+    }
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__form {
+    width: 100%;
+
+    &-input {
+      @include font-size(14);
+
+      display: block;
+      width: 100%;
+      max-width: (230/370) * 100%;
+      padding: rem(6) rem(14) rem(7);
+      border: 1px solid #fff;
+      border-radius: 3px;
+      background-color: transparent;
+      color: #fff;
+
+      &::placeholder {
+        color: #e8e9eb;
+      }
+    }
+
+    &-submit {
+      @include font-size(14);
+
+      display: block;
+      padding: rem(6) rem(20) rem(7);
+      border: 1px solid $red;
+      border-radius: 3px;
+      background-color: $red;
+      color: #fff;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+  }
+}

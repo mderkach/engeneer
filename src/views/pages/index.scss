@@ -73,12 +73,18 @@
     @include media-breakpoint-down(lg) {
       @include make-col-size(6, 1);
     }
+    @include media-breakpoint-down(md) {
+      @include make-col-size(8, 1);
+    }
   }
 
   &__btn {
     @include make-col-size(4, 1);
     @include make-grid-row(2);
     @include font-size(20);
+    @include media-breakpoint-down(md) {
+      @include make-col-size(6, 1);
+    }
 
     display: flex;
     align-items: center;
@@ -282,6 +288,10 @@
 
     &-bg {
       &_upper {
+        @include media-breakpoint-down(md) {
+          width: 50%;
+        }
+
         position: absolute;
         top: 0;
         right: 0;

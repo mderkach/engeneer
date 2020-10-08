@@ -37,6 +37,10 @@
     }
 
     &-dropdown {
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+
       position: absolute;
       left: 0;
       z-index: 99;
@@ -51,16 +55,30 @@
 
       &-block {
         &:first-child {
+          @include media-breakpoint-down(md) {
+            margin-bottom: rem(40);
+            padding-right: 0;
+            border-right: 0;
+          }
+
           padding-right: rem(50);
           border-right: 1px solid #e8e9eb;
         }
 
         &:last-child {
+          @include media-breakpoint-down(md) {
+            margin-bottom: 0;
+          }
+
           padding-right: 0;
           border: 0;
         }
 
         ~ div {
+          @include media-breakpoint-down(md) {
+            padding-left: 0;
+          }
+
           padding-left: rem(50);
 
           .toolbar__item-dropdown-menu ~ .toolbar__item-dropdown-header {

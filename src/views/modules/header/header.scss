@@ -58,6 +58,9 @@
 
   &__logo {
     @include make-col-size(4, 2);
+    @include media-breakpoint-down(md) {
+      @include make-col-size(5, 2);
+    }
 
     max-height: 128px;
   }
@@ -65,6 +68,9 @@
   &__descr {
     @include make-col-position(5, -1);
     @include font-size(30);
+    @include media-breakpoint-down(md) {
+      @include make-col-position(6, -1);
+    }
 
     position: relative;
     margin-top: rem(16);

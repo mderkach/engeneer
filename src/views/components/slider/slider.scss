@@ -18,6 +18,9 @@
   &-slide {
     @extend .swiper-slide;
     @include make-grid-container(4, $grid-desktop-gap-col, $grid-desktop-gap-row);
+    @include media-breakpoint-down(md) {
+      @include make-grid-container(2, $grid-desktop-gap-col, $grid-desktop-gap-row);
+    }
 
     grid-auto-rows: rem(120);
 

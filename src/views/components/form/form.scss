@@ -1,6 +1,10 @@
 @use 'src/scss/utils/utils' as *;
 
 .form {
+  @include media-breakpoint-between(0, xs) {
+    padding: 0;
+  }
+
   padding: 0 rem(25);
 
   &-header {

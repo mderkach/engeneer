@@ -2,11 +2,21 @@
 
 .footer {
   &__upper {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
     padding: rem(40) 0 rem(25);
     background: #313638;
   }
 
   &__lower {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
     padding: rem(27) 0 rem(30 - 12);
     background: #4f4f4f;
 

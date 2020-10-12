@@ -1,7 +1,11 @@
 @use 'src/scss/utils/utils' as *;
 
 .header {
-  padding: 45px 0 48px;
+  @include media-breakpoint-between(0, xs) {
+    padding: rem(20) rem(10);
+  }
+
+  padding: rem(45) 0 rem(48);
 
   &__container {
     @include make-grid-container-max-widths();
@@ -13,6 +17,9 @@
 
   &__upper {
     @include make-col-fluid();
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
 
     display: grid;
     grid-template-columns: 4fr 8fr;
@@ -26,6 +33,9 @@
 
         padding-left: 0;
       }
+      @include media-breakpoint-between(0, xs) {
+        flex-wrap: wrap;
+      }
 
       display: flex;
       align-items: flex-start;
@@ -34,6 +44,13 @@
     }
 
     &-cell {
+      @include media-breakpoint-between(0, xs) {
+        align-items: flex-start;
+        width: 100%;
+        height: rem(46);
+        margin-bottom: rem(16);
+      }
+
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -57,9 +74,15 @@
   }
 
   &__logo {
-    @include make-col-size(4, 2);
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-up(lg) {
+      @include make-col-size(4, 2);
+    }
+    @include media-breakpoint-between(md, md) {
       @include make-col-size(5, 2);
+    }
+    @include media-breakpoint-between(0, md) {
+      grid-row: auto;
+      grid-column: 1 / -1;
     }
 
     max-height: 128px;
@@ -69,7 +92,13 @@
     @include make-col-position(5, -1);
     @include font-size(30);
     @include media-breakpoint-down(md) {
-      @include make-col-position(6, -1);
+      @include make-col-size(1, 1);
+    }
+    @include media-breakpoint-between(0, md) {
+      grid-row: auto;
+      grid-column: 1 / -1;
+      margin-top: rem(32);
+      padding-left: 0;
     }
 
     position: relative;
@@ -78,6 +107,13 @@
     color: $black;
 
     &::before {
+      @include media-breakpoint-between(0, md) {
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+      }
+
       content: '';
       position: absolute;
       top: 0;

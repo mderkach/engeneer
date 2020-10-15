@@ -1,0 +1,56 @@
+@use 'src/scss/utils/utils' as *;
+
+@import 'swiper/swiper';
+
+.slider-fluid {
+  @extend .swiper-container;
+
+  width: 100%;
+
+  &-wrapper {
+    @extend .swiper-wrapper;
+
+    width: 100%;
+  }
+
+  &-slide {
+    @extend .swiper-slide;
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        object-position: center;
+      }
+    }
+  }
+
+  &-pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &-bullet {
+    @include size(rem(15));
+
+    margin: 0 rem(9);
+    border-radius: 50%;
+    background-color: #e8e9eb;
+    cursor: pointer;
+
+    &.is-active {
+      background-color: $red;
+    }
+  }
+}

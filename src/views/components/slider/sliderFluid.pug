@@ -1,0 +1,6 @@
+.slider-fluid
+  .slider-fluid-wrapper
+    each index in [1,2,3,4]
+      .slider-fluid-slide
+        +pic('slider-fluid-slide-img', 'assets/img/slider/slider-fluid' + index + '.jpg')
+  .slider-fluid-pagination

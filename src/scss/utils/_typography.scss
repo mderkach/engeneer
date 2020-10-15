@@ -11,6 +11,10 @@
 }
 
 .text {
+  &-big {
+    @include font-size(20);
+  }
+
   &-regular {
     @include font-size(18);
 

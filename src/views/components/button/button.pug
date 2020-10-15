@@ -1,1 +1,7 @@
-button.btn Бесплатная консультация
+mixin buttonPrimary(item, modCls)
+  - className = modCls || false
+  a.button.button-primary(href=item.link, class=className) #{item.text}
+
+mixin buttonSecondary(item, modCls)
+  - className = modCls || false
+  a.button.button-secondary(href=item.link, class=className) #{item.text}

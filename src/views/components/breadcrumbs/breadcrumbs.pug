@@ -1,0 +1,8 @@
+mixin breadcrumbs(items)
+  .breadcrumbs__wrapper
+    each item, index in items
+      if index !== items.length - 1
+        a.breadcrumbs__item(href=item.link) #{item.name}
+        span.breadcrumbs__separator >
+      else
+        span.breadcrumbs__item #{item.name}

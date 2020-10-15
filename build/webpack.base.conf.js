@@ -11,34 +11,47 @@ const mqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 const moveProps = require('postcss-move-props-to-bg-image-query');
 
-
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: Path.join(__dirname, '../src'),
   build: Path.join(__dirname, '../build'),
   dist: Path.join(__dirname, '../dist'),
+  pages: Path.join(__dirname, '../src/views/pages'),
   assets: 'assets/',
 };
 
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-// const PAGES_DIR = PATHS.src
-const PAGES_DIR = `${PATHS.src}/views/pages/`;
-const PAGES = Fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
 
-// entry points
-const mainEntry = {
-  app: `${PATHS.src}/main.js`
-};
+const getDirectories = (source) =>
+  Fs.readdirSync(source, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
 
-const dynamicEntry = glob.sync(`${PAGES_DIR}*.js`).reduce((acc, path) => {
+const PAGES_DIR = getDirectories(PATHS.pages);
+const PAGES = [];
+
+PAGES_DIR.forEach((dir) => {
+  PAGES.push(
+    ...Fs.readdirSync(`${PATHS.pages}/${dir}`).filter((fileName) => fileName.endsWith('.pug')),
+  );
+});
+
+const DYNAMIC_ENTRY = glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
   const entry = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
   acc[entry] = path;
   return acc;
 }, {});
 
-const entryPoints = { ...mainEntry, ...dynamicEntry}
+// entry points
+const MAIN_ENTRY = {
+  app: `${PATHS.src}/main.js`,
+};
+
+const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
+
+console.log(entryPoints);
 
 module.exports = {
   // BASE config
@@ -72,8 +85,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[ext]',
-          outputPath: `${PATHS.assets}`,
-          publicPath: './',
+          outputPath: `../${PATHS.assets}`,
+          publicPath: '../',
         },
       },
       {
@@ -281,7 +294,7 @@ module.exports = {
     ...PAGES.map(
       (page) =>
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
+          template: `${PATHS.pages}/${page.replace(/\.pug/, '')}/${page}`,
           filename: `./${page.replace(/\.pug/, '.html')}`,
           chunks: ['app', `${page.replace(/\.pug/, '')}`],
         }),

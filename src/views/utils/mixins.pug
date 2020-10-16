@@ -1,7 +1,13 @@
 mixin wrapper(classname)
-  div(class=classname + '__container container')
-    if block
-      block
+  - classname = classname || null
+  if classname
+    div(class=classname + '__container container')
+      if block
+        block
+  else
+    div(class='container')
+      if block
+        block
 
 mixin pic(classname, srcset, alt)
   - classname = classname || '';
@@ -20,3 +26,4 @@ mixin icon(classname, name)
 include ../components/form/form
 include ../components/breadcrumbs/breadcrumbs
 include ../components/button/button
+include ../components/cards/cardAlso

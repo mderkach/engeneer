@@ -39,6 +39,7 @@ module.exports = {
       {
         ignoreAtRules: ['if', 'else'],
       },
+      { ignore: 'after-comment' },
     ],
   },
 };

@@ -29,7 +29,7 @@ block content
           | Разработка и дизайн
           br
           | интерактивных курсов
-        p.text-big Уникальная услуга по разработке электронных дистанционных курсов по актуальным для вас темам. Педагогический дизайн. AGILE подход и авторские методики от сертифицированных международными органами по стандартизации  специалистов-практиков
+        p.services__fluid-text.text-big Уникальная услуга по разработке электронных дистанционных курсов по актуальным для вас темам. Педагогический дизайн. AGILE подход и авторские методики от сертифицированных международными органами по стандартизации  специалистов-практиков
         .services__fluid-descr-buttons
           +buttonPrimary({
             link: '#',
@@ -68,7 +68,7 @@ block content
           | портала по повышению уровня
           br
           | осведомленности сотрудников
-        p.text-big Обеспечение оперативного доступа к большому количеству информации, своевременные коммуникации с ответственными лицами из различных подразделений, управление задачами  и другие функции в брендированной usability оболочке
+        p.services__fluid-text.text-big Обеспечение оперативного доступа к большому количеству информации, своевременные коммуникации с ответственными лицами из различных подразделений, управление задачами  и другие функции в брендированной usability оболочке
         .services__fluid-descr-buttons
           +buttonPrimary({
             link: '#',
@@ -86,7 +86,7 @@ block content
           | Семинары, игры и тренинги по
           br
           | индивидуальным сценариям
-        p.text-big
+        p.services__fluid-text.text-big
           | Интерактивные методики проведения обучающих
           br
           | мероприятий и отсутствие шаблонных схем
@@ -98,7 +98,7 @@ block content
           | усваивают информацию, а Заказчик получает ощутимую
           br
           | практическую пользу.
-        p.text-big
+        p.services__fluid-text.text-big
           | Для достижения наилучшего результата
           br
           |перед началом обучения мы:
@@ -111,3 +111,52 @@ block content
             link: '#',
             text: 'Подробнее'
           }, 'text-big')
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Тщательно знакомимся с особенностями целевой аудитории определяем цели курсов
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Разрабатываем и адаптируем учебный материал под задачи Заказчика
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Проектируем актуальный контекст обучения
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Создаем интерактивные учебные материалы
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big С помощью вовлекающих методки стимулируем самостоятельный поиск новых знаний
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Обеспечиваем обратную связь в процессе и по итогам обучения
+  .services__row
+    +wrapper()
+      .services__row-wrapper
+        +icon('icon', 'check')
+        p.text-big Мотивируем сотрудников к применению полученных знаний на практике
+  .services__buttons
+    +wrapper()
+      .services__buttons-wrapper
+        +buttonPrimary({
+            link: '#',
+            text: 'Бесплатная консультация'
+          }, 'text-big')
+        +buttonSecondary({
+            link: '#',
+            text: 'Подробнее'
+          }, 'text-big')
+  include ../../components/screen/screenPartners
+  include ../../components/screen/screenProjects
+  include ../../components/screen/screenAlso

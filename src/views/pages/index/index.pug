@@ -86,11 +86,7 @@ block content
         p.index__company-card-header 20 лет
         p.index__company-card-descr
           | В сфере ИБ
-  section.index__certificates
-    +wrapper(slug)
-      h2.h2.index__heading Сертификаты
-      +pic('index__certificates-img', './assets/img/cert-1.png')
-      +pic('index__certificates-img', './assets/img/cert-2.png')
+  include ../../components/screen/screenPartners
   section.index__callback
     +pic('index__banner-bg', './assets/img/back-gradient.jpg')
     +pic('index__callback-bg_upper', './assets/img/notebook.png')
@@ -113,7 +109,4 @@ block content
       ],
       'Перезвоните мне',
      )
-  section.index__projects
-    +wrapper(slug)
-      h2.h2.index__heading Наши проекты
-      include ../../components/slider/slider
+  include ../../components/screen/screenProjects

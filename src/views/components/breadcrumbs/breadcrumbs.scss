@@ -1,6 +1,7 @@
 // utils
 
-@use 'src/scss/utils/utils' as *;
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
 
 .breadcrumbs {
   &__wrapper {
@@ -18,6 +19,10 @@
     display: flex;
     margin-right: 5px;
     color: #313638;
+
+    &:not(a) {
+      cursor: default;
+    }
   }
 
   &__separator {
@@ -26,5 +31,6 @@
     display: flex;
     margin-right: 5px;
     color: #313638;
+    cursor: default;
   }
 }

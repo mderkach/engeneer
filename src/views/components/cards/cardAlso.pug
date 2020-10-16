@@ -1,0 +1,6 @@
+mixin cardAlso(icon, text, link, cls)
+  - cls = cls || false
+  .card-also(class=cls)
+    a.card-also-link(href=link)
+    +icon('card-also-icon', icon)
+    p.card-also-header #{ text }

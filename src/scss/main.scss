@@ -1,3 +1,5 @@
+// global uils
+
 @use './utils/vars' as *;
 @use './utils/mixins' as *;
 @use './utils/reset' as *;
@@ -22,6 +24,12 @@ button {
   }
 }
 
+.container {
+  @include make-container();
+  @include make-grid-container-max-widths();
+}
+
+// custom rules
 .--accent {
   color: $red;
 }

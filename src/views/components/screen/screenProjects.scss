@@ -1,0 +1,21 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.screen-projects {
+  @include media-breakpoint-between(0, xs) {
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
+
+  padding: rem(60) 0;
+
+  &__heading {
+    @include make-col-fluid();
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(20);
+    }
+
+    margin-bottom: rem(50);
+    text-align: center;
+  }
+}

@@ -27,7 +27,6 @@ const sliderFluid = {
   },
   init() {
     if (this.el) {
-      console.log('init fluid slider');
       this.constructor();
     }
   },

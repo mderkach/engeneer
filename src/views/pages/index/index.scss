@@ -1,11 +1,5 @@
-// utils
-
-@use 'src/scss/utils/utils' as *;
-// components
-
-@use 'src/views/modules/header/header';
-@use 'src/views/modules/footer/footer';
-@use 'src/views/modules/toolbar/toolbar';
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
 
 .index {
   &__container {

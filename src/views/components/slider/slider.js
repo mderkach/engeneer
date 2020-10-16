@@ -25,7 +25,6 @@ const slider = {
   },
   init() {
     if (this.el) {
-      console.log('init', this.el);
       this.constructor();
     }
   },

@@ -6,13 +6,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const mqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
-const moveProps = require('postcss-move-props-to-bg-image-query');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Main const
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: Path.join(__dirname, '../src'),
   build: Path.join(__dirname, '../build'),
@@ -22,21 +19,24 @@ const PATHS = {
 };
 
 // Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-
+// fetch directories
 const getDirectories = (source) =>
   Fs.readdirSync(source, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
     .map((dirent) => dirent.name);
-
 const PAGES_DIR = getDirectories(PATHS.pages);
+// push directories to array based on .pug in derectories
 const PAGES = [];
-
 PAGES_DIR.forEach((dir) => {
   PAGES.push(
     ...Fs.readdirSync(`${PATHS.pages}/${dir}`).filter((fileName) => fileName.endsWith('.pug')),
   );
 });
+
+// entry points
+const MAIN_ENTRY = {
+  app: `${PATHS.src}/main.js`,
+};
 
 const DYNAMIC_ENTRY = glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
   const entry = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
@@ -44,17 +44,21 @@ const DYNAMIC_ENTRY = glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => 
   return acc;
 }, {});
 
-// entry points
-const MAIN_ENTRY = {
-  app: `${PATHS.src}/main.js`,
-};
-
 const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
 
-console.log(entryPoints);
+// remove duplicated css
+function recursiveIssuer(m) {
+  if (m.issuer) {
+    return recursiveIssuer(m.issuer);
+  } else if (m.name) {
+    return m.name;
+  } else {
+    return false;
+  }
+}
 
+// BASE config
 module.exports = {
-  // BASE config
   externals: {
     paths: PATHS,
   },
@@ -70,11 +74,6 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
       },
-      // {
-      //   enforce: 'pre',
-      //   test: /\.js$/,
-      //   loader: 'webpack-import-glob-loader',
-      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -143,11 +142,6 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   enforce: 'pre',
-      //   test: /\.(sa|sc|c)ss$/,
-      //   loader: 'webpack-import-glob-loader',
-      // },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -162,21 +156,7 @@ module.exports = {
             options: {
               sourceMap: true,
               postcssOptions: {
-                plugins: [
-                  moveProps(),
-                  autoprefixer,
-                  mqpacker,
-                  cssnano({
-                    preset: [
-                      'default',
-                      {
-                        discardComments: {
-                          removeAll: true,
-                        },
-                      },
-                    ],
-                  }),
-                ],
+                config: `${PATHS.build}/postcss.config.js`,
               },
             },
           },
@@ -200,21 +180,7 @@ module.exports = {
             options: {
               sourceMap: true,
               postcssOptions: {
-                plugins: [
-                  moveProps(),
-                  autoprefixer,
-                  mqpacker,
-                  cssnano({
-                    preset: [
-                      'default',
-                      {
-                        discardComments: {
-                          removeAll: true,
-                        },
-                      },
-                    ],
-                  }),
-                ],
+                config: `${PATHS.build}/postcss.config.js`,
               },
             },
           },
@@ -234,6 +200,13 @@ module.exports = {
             comments: false,
           },
         },
+      }),
+      new OptimizeCssAssetsPlugin({
+        cssProcessor: cssnano,
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+        canPrint: true,
       }),
     ],
     splitChunks: {
@@ -289,8 +262,6 @@ module.exports = {
     }),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
-    // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
-    // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     ...PAGES.map(
       (page) =>
         new HtmlWebpackPlugin({

@@ -1,5 +1,5 @@
 @use './_mixins' as *;
 
-@include font-face('Roboto', '../../../assets/fonts/Roboto');
-@include font-face('Roboto', '../../../assets/fonts/RobotoLight', 300);
-@include font-face('Roboto', '../../../assets/fonts/RobotoMedium', 500);
+@include font-face('Roboto', '../../assets/fonts/Roboto');
+@include font-face('Roboto', '../../assets/fonts/RobotoLight', 300);
+@include font-face('Roboto', '../../assets/fonts/RobotoMedium', 500);

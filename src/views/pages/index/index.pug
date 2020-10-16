@@ -11,14 +11,20 @@ block content
     +pic('index__banner-bg', './assets/img/back-main.jpg')
     +wrapper(slug)
       h1.index__header Внедрение ISO/IEC 27001
-      a.btn.index__btn(href="#") Бесплатная консультация
+      +buttonPrimary({
+            link: '#',
+            text: 'Бесплатная консультация'
+          }, 'index__btn')
   section.index__cards
     +wrapper(slug)
       .index__cards-item
         +icon('icon-big', 'loop-big')
         p.index__cards-item-header.--accent Экспертиза в области ИБ
         p.index__cards-item-descr Некоторые особенности внутренней политики разоблачены! Разнообразный и богатый опыт говорит нам, что внедрение.
-        a.btn.btn-small.index__btn(href="#") Подробнее
+        +buttonPrimary({
+            link: '#',
+            text: 'Подробнее'
+          }, 'btn-small index__btn')
       .index__cards-item
         +icon('icon-big', 'collab')
         p.index__cards-item-header

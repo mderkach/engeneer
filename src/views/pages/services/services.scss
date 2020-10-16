@@ -2,6 +2,13 @@
 @use 'src/scss/utils/mixins' as *;
 
 .services {
+  &__section {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+  }
+
   &__container {
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
     @include media-breakpoint-between(0, xs) {
@@ -20,29 +27,45 @@
   }
 
   &__fluid {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
     &-container {
-      display: grid;
-      grid-template-columns: minmax(auto, 50%) minmax(auto, 50%);
-      gap: 0 rem(15);
-      width: 100%;
+      @include media-breakpoint-up(xl) {
+        grid-template-columns: minmax(auto, 50%) minmax(auto, 50%);
+        gap: 0 rem(15);
 
-      &:nth-child(even) {
-        .services__fluid-descr {
-          grid-row-start: 1;
-          grid-row-end: 1;
-          grid-column-start: 1;
-          grid-column-end: 1;
-          align-items: flex-end;
-          text-align: right;
-        }
+        &:nth-child(even) {
+          .services__fluid-descr {
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 1;
+            grid-column-end: 1;
+            align-items: flex-end;
+            text-align: right;
+          }
 
-        .services__fluid-slider {
-          grid-row-start: 1;
-          grid-row-end: 1;
-          grid-column-start: 2;
-          grid-column-end: 2;
+          .services__fluid-slider {
+            grid-row-start: 1;
+            grid-row-end: 1;
+            grid-column-start: 2;
+            grid-column-end: 2;
+          }
         }
       }
+      @include media-breakpoint-down(lg) {
+        @include make-grid-container(1, $grid-desktop-gap-col);
+        @include make-grid-container-max-widths();
+
+        grid-template-columns: 100%;
+        gap: rem(15);
+        width: 100%;
+        margin-bottom: rem(15);
+      }
+
+      display: grid;
     }
 
     &-descr {
@@ -51,6 +74,12 @@
       justify-content: center;
 
       &-buttons {
+        @include media-breakpoint-down(sm) {
+          grid-template-columns: 1fr;
+          gap: rem(15);
+          margin-top: rem(15);
+        }
+
         display: grid;
         grid-template-columns: minmax(auto, rem(300)) minmax(auto, rem(215));
         gap: 0 rem(36);
@@ -62,12 +91,21 @@
       }
     }
 
+    &-pic {
+      width: 100%;
+    }
+
     &-header {
       margin-bottom: rem(14);
     }
   }
 
   &__row {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
     width: 100%;
 
     &:nth-child(odd) {
@@ -75,36 +113,45 @@
     }
 
     &-wrapper {
-      display: flex;
+      display: grid;
+      grid-template-columns: rem(30) 1fr;
+      gap: 0 rem(8);
       width: 100%;
       padding: rem(20) 0;
-
-      .icon {
-        margin-right: rem(8);
-      }
     }
   }
 
   &__buttons {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
     padding: rem(30) 0;
     border: 1px solid #e8e9eb;
     border-right: 0;
     border-left: 0;
 
     &-wrapper {
+      @include media-breakpoint-up(lg) {
+        .button {
+          &-primary {
+            max-width: (300 / 1170) * 100%;
+          }
+
+          &-secondary {
+            max-width: (215 / 1170) * 100%;
+          }
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+        gap: rem(15);
+      }
+
       display: flex;
       gap: 0 rem(36);
       align-items: center;
-
-      .button {
-        &-primary {
-          max-width: (300 / 1170) * 100%;
-        }
-
-        &-secondary {
-          max-width: (215 / 1170) * 100%;
-        }
-      }
     }
   }
 }

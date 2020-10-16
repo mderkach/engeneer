@@ -3,8 +3,7 @@
 
 .screen-also {
   @include media-breakpoint-between(0, xs) {
-    padding-right: rem(10);
-    padding-left: rem(10);
+    padding: rem(10) rem(10) rem(30);
   }
 
   padding: 0 0 rem(60) 0;

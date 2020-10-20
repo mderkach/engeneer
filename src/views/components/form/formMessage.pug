@@ -1,0 +1,20 @@
+mixin formMessage(className, inputs)
+  - className = className || null;
+  form.form-message(action="#" method="post" class=className)
+    each input in inputs
+      if input.type !== 'textarea'
+        input.form-message-input(
+          id=input.name
+          type=input.type
+          name=input.name
+          placeholder=input.placeholder
+        )
+      else
+        textarea.form-message-input(
+          id=input.name
+          name=input.name
+          placeholder=input.placeholder
+          rows='4'
+        )
+    p.form-message-agreement Нажимая на кнопку, вы даете согласие на Обработку персональных данных
+    button.form-message-submit(type="submit") Отправить

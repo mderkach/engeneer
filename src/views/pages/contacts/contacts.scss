@@ -1,0 +1,63 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.contacts {
+  &__container {
+    @include make-grid-container(2, $grid-desktop-gap-col);
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr;
+      gap: rem(15);
+    }
+    @include media-breakpoint-between(0, xs) {
+      padding: rem(20) rem(10);
+    }
+
+    padding: rem(55) 0 rem(50);
+  }
+
+  &__heading {
+    margin-bottom: rem(25);
+
+    span {
+      color: $red;
+    }
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+
+    &_top {
+      display: flex;
+    }
+
+    &_text {
+      display: block;
+      margin-bottom: rem(2);
+      margin-left: rem(4);
+      color: #000;
+      line-height: 1.7;
+    }
+
+    &_descr {
+      color: #bdbdbd;
+    }
+
+    &_wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__sep {
+    width: 100%;
+    height: 1px;
+    margin: rem(21) auto rem(32);
+    background-color: #e8e9eb;
+  }
+}

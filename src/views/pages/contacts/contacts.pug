@@ -1,0 +1,75 @@
+extends ../../layout/main
+
+block variables
+  - title = 'Engeneer';
+  - description = '';
+  - theme = '#e10303';
+  - slug = 'contacts';
+  - pageClass = slug + '-page';
+
+block content
+  section(class=slug)
+    +wrapper(slug)
+      .contacts__left
+        h2.contacts__heading.h2 Компания&nbsp;
+          span.inherit Engineer
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'phone')
+              a.contacts__cell_text.text-regular(href="tel:+74957617146") +7 (495) 761-71-46
+            p.contacts__cell_descr.text-small.light Заказать обратный звонок
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'mail')
+              a.contacts__cell_text.text-regular(href="mailto: info@tс-engineer.ru") info@tс-engineer.ru
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'placemark')
+              p.contacts__cell_text.text-regular
+                | Фактический адрес:
+                br
+                | БЦ "БЦ "Сильвер Стоун", 129343 г.Москва, проезд
+                br
+                |Серебрякова, 14с23, этаж 2, офис 18.
+                br
+                | м.Ботанический
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'placemark')
+              p.contacts__cell_text.text-regular
+                | Юридический адрес:
+                br
+                | 141206, Московская обл., Пушкинский район, г. Пушкино,
+                br
+                | улица Заводская, строение 7, этаж 3, помещение 18
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'pdf')
+              a.contacts__cell_text.text-regular(href='#') Скачать реквизиты компании
+        .contacts__sep
+        h2.contacts__heading.h2 Напишите нам
+        +formMessage(slug+'__from', [
+          {
+            type: 'text',
+            name: 'name',
+            placeholder: 'Ваше имя'
+          },
+          {
+            type: 'email',
+            name: 'mail',
+            placeholder: 'Ваш email'
+          },
+          {
+            type: 'textarea',
+            name: 'message',
+            placeholder: 'Текст сообщения'
+          },
+        ])
+      .contacts__right
+        include ../../components/map/map
+  include ../../components/screen/screenCallback

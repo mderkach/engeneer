@@ -1,0 +1,16 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.map {
+  @include media-breakpoint-down(lg) {
+    min-height: rem(480);
+  }
+  @include media-breakpoint-between(0, xs) {
+    padding: rem(20) 0;
+  }
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}

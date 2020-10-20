@@ -1,13 +1,9 @@
 const Path = require('path');
 const Fs = require('fs');
-const glob = require('glob');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Glob = require('glob');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const cssnano = require('cssnano');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Main const
 const PATHS = {
@@ -38,24 +34,13 @@ const MAIN_ENTRY = {
   app: `${PATHS.src}/main.js`,
 };
 
-const DYNAMIC_ENTRY = glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
+const DYNAMIC_ENTRY = Glob.sync(`${PATHS.pages}/**/*.js`).reduce((acc, path) => {
   const entry = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
   acc[entry] = path;
   return acc;
 }, {});
 
 const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
-
-// remove duplicated css
-function recursiveIssuer(m) {
-  if (m.issuer) {
-    return recursiveIssuer(m.issuer);
-  } else if (m.name) {
-    return m.name;
-  } else {
-    return false;
-  }
-}
 
 // BASE config
 module.exports = {
@@ -78,15 +63,6 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: '/node_modules/',
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-          outputPath: `./${PATHS.assets}`,
-          publicPath: '../',
-        },
       },
       {
         test: /\.svg(\?.*)?$/,
@@ -142,103 +118,7 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { sourceMap: true },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                config: `${PATHS.build}/postcss.config.js`,
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { sourceMap: true },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                config: `${PATHS.build}/postcss.config.js`,
-              },
-            },
-          },
-        ],
-      },
     ],
-  },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: false, // Must be set to true if using source-maps in production
-        terserOptions: {
-          compress: {
-            drop_console: true,
-          },
-          output: {
-            comments: false,
-          },
-        },
-      }),
-      new OptimizeCssAssetsPlugin({
-        cssProcessor: cssnano,
-        cssProcessorPluginOptions: {
-          preset: ['default', { discardComments: { removeAll: true } }],
-        },
-        canPrint: true,
-      }),
-    ],
-    splitChunks: {
-      cacheGroups: {
-        vendorJs: {
-          name: 'vendor-js',
-          test: /node_modules/,
-          chunks: 'all',
-          enforce: true,
-        },
-        vendorStyles: {
-          name: 'app',
-          test: /src[\\/]scss/,
-          chunks: 'all',
-          enforce: true,
-        },
-        pages: {
-          name(module, chunks) {
-            return chunks.map((item) => item.name).join('');
-          },
-          test(module) {
-            return (
-              module.resource &&
-              module.resource.endsWith('.js') &&
-              module.resource.includes(`${Path.sep}pages${Path.sep}`)
-            );
-          },
-          chunks: 'all',
-          enforce: true,
-        },
-      },
-    },
   },
   resolve: {
     alias: {
@@ -246,12 +126,11 @@ module.exports = {
     },
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      moduleFilename: ({ name }) => `${PATHS.assets}css/${name.replace('/js/', '/css/')}.css`,
-    }),
+    // load svg sprite
     new SpriteLoaderPlugin({
       plainSprite: true,
     }),
+    // copy assets to dist
     new CopyWebpackPlugin({
       patterns: [
         { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
@@ -260,7 +139,6 @@ module.exports = {
         { from: `${PATHS.src}/static`, to: '' },
       ],
     }),
-
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map(
       (page) =>

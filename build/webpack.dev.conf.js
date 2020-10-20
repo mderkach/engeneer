@@ -8,12 +8,49 @@ const devWebpackConfig = merge(BaseWebpackConfig, {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
   devServer: {
+    compress: true,
     contentBase: BaseWebpackConfig.externals.paths.dist,
     port: 8080,
     overlay: {
       warnings: true,
       errors: true,
     },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+          outputPath: `./${BaseWebpackConfig.externals.paths.assets}`,
+          publicPath: './assets/',
+        },
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: `${BaseWebpackConfig.externals.paths.build}/postcss.config.js`,
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new Webpack.SourceMapDevToolPlugin({

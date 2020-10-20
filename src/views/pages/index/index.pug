@@ -3,7 +3,8 @@ extends ../../layout/main
 block variables
   - title = 'Engeneer';
   - description = '';
-  - slug = 'index'
+  - theme = '#e10303';
+  - slug = 'index';
   - pageClass = slug + '-page';
 
 block content
@@ -43,28 +44,7 @@ block content
           p.index__cards-item-header Разработка и дизайн интерактивных курсов по индивидуальным задачам
           p.index__cards-item-header Разработка и дизайн обучающих материалов
           p.index__cards-item-header Портал – комплексные проекты
-  section.index__order
-    +pic('index__banner-bg', './assets/img/back-gradient.jpg')
-    +pic('index__banner-bg_upper', './assets/img/man.png')
-    +wrapper(slug)
-     +form(
-      'index__order-form',
-      'Заказать <br> бесплатную консультацию',
-      'Оставьте свои контакты,  мы перезвоним через несколько минут',
-      [
-        {
-          type: 'text',
-          name: 'name',
-          placeholder: 'Ваше имя'
-        },
-        {
-          type: 'tel',
-          name: 'phone',
-          placeholder: 'Телефон'
-        }
-      ],
-      'Бесплатная консультация',
-     )
+  include ../../components/screen/screenConsult
   section.index__company
     +wrapper(slug)
       h2.h2.index__heading.index__company-header
@@ -87,26 +67,5 @@ block content
         p.index__company-card-descr
           | В сфере ИБ
   include ../../components/screen/screenPartners
-  section.index__callback
-    +pic('index__banner-bg', './assets/img/back-gradient.jpg')
-    +pic('index__callback-bg_upper', './assets/img/notebook.png')
-    +wrapper(slug)
-     +form(
-      'index__order-form',
-      'Заказать обратный звонок',
-      false,
-      [
-        {
-          type: 'text',
-          name: 'name',
-          placeholder: 'Ваше имя'
-        },
-        {
-          type: 'tel',
-          name: 'phone',
-          placeholder: 'Телефон'
-        }
-      ],
-      'Перезвоните мне',
-     )
+  include ../../components/screen/screenCallback
   include ../../components/screen/screenProjects

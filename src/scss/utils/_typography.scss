@@ -42,10 +42,15 @@
   font-weight: bold;
 }
 
-.inherit-weight {
+.inherit {
   font-weight: inherit;
-}
-
-.inherit-size {
   font-size: inherit;
+
+  &-weight {
+    font-weight: inherit;
+  }
+
+  &-size {
+    font-size: inherit;
+  }
 }

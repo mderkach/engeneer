@@ -11,10 +11,9 @@ mixin form(className, header, descr, inputs, btnText)
       each input in inputs
         input.form-input(
           type=input.type
+          id=input.name
           name=input.name
           placeholder=input.placeholder
-          onfocus="this.placeholder=''"
-          onblur=`this.paceholder='${input.placeholder}'`
         )
       p.form-agreement Нажимая на кнопку, вы даете согласие на Обработку персональных данных
       button.btn.form-submit(type="submit") !{ btnText }

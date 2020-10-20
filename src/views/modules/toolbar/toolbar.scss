@@ -40,6 +40,12 @@
       }
     }
 
+    &.is-active {
+      .toolbar__item-descr {
+        color: $red;
+      }
+    }
+
     &-descr {
       @include font-size(20);
 

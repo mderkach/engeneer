@@ -1,0 +1,51 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.form-message {
+  &-input {
+    @include font-size(12);
+
+    display: block;
+    width: 100%;
+    margin-bottom: rem(8);
+    padding: rem(16);
+    border: 1px solid #e8e9eb;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    resize: none;
+
+    &::placeholder {
+      color: #000;
+    }
+  }
+
+  &-agreement {
+    @include font-size(12);
+    @include make-col-fluid();
+
+    color: #828282;
+  }
+
+  &-submit {
+    @include font-size(20);
+    @include media-breakpoint-between(0, xs) {
+      max-width: 100%;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: (350/570) * 100%;
+    margin-top: rem(6);
+    padding: rem(10) 0;
+    border-radius: 3px;
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

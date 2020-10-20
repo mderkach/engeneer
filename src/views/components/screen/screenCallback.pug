@@ -1,0 +1,22 @@
+section.screen-callback
+  +pic('screen-callback-bg', './assets/img/back-gradient.jpg')
+  +pic('screen-callback-bg_upper', './assets/img/notebook.png')
+  +wrapper('screen-callback')
+    +form(
+      'screen-callback-form',
+      'Заказать обратный звонок',
+      false,
+      [
+        {
+          type: 'text',
+          name: 'name',
+          placeholder: 'Ваше имя'
+        },
+        {
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон'
+        }
+      ],
+      'Перезвоните мне',
+    )

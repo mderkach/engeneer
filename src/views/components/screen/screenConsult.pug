@@ -1,22 +1,23 @@
-section.screen-consult
-  +pic('screen-consult-bg', './assets/img/back-gradient.jpg')
-  +pic('screen-consult-bg_upper', './assets/img/man.png')
-  +wrapper('screen-consult')
-    +form(
-    'screen-consult-form',
-    'Заказать <br/> бесплатную консультацию',
-    'Оставьте свои контакты,  мы перезвоним через несколько минут',
-    [
-      {
-        type: 'text',
-        name: 'name',
-        placeholder: 'Ваше имя'
-      },
-      {
-        type: 'tel',
-        name: 'phone',
-        placeholder: 'Телефон'
-      }
-    ],
-    'Бесплатная консультация',
+mixin screenConsult(header, pic)
+  section.screen-consult
+    +pic('screen-consult-bg', './assets/img/back-gradient.jpg')
+    +pic('screen-consult-bg_upper', pic)
+    +wrapper('screen-consult')
+      +form(
+      'screen-consult-form',
+      header,
+      'Оставьте свои контакты,  мы перезвоним через несколько минут',
+      [
+        {
+          type: 'text',
+          name: 'name',
+          placeholder: 'Ваше имя'
+        },
+        {
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон'
+        }
+      ],
+      'Бесплатная консультация',
     )

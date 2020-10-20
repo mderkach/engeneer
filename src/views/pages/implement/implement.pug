@@ -31,7 +31,7 @@ block content
       include ../../components/slider/sliderFluid
     +wrapper(slug)
       p.implement__text_box.text-big Внедряем системы управления информационной безопасностью на экспертном уровне. В результате выполненных работ по СУИБ организация будет готова к прохождению сертификационного аудита  со стороны любого международного органа по сертификации, предъявляющего самые строгие требования в ходе проверки. Результаты нашей работы проходят успешную сертификацию со стороны таких органов по сертификации, как BSI, Bureau Veritas, TUV Austria.
-  include ../../components/screen/screenConsult
+  +screenConsult('Заказать <br/> бесплатную консультацию', './assets/img/man.png')
   .implement__fluid
     +fluid(
       'Сопровождение <br /> ДО, ВО ВРЕМЯ и ПОСЛЕ аудита',
@@ -56,4 +56,5 @@ block content
     )
       +pic('implement__pic', './assets/img/imp-3.jpg')
   include ../../components/screen/screenProjects
+  +screenConsult('Заказать услуги по внедрению системы управления информационной безопасностью', './assets/img/women.png')
   include ../../components/screen/screenAlso

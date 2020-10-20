@@ -6,8 +6,7 @@
 .breadcrumbs {
   &__wrapper {
     @include media-breakpoint-between(0, xs) {
-      padding-right: rem(10);
-      padding-left: rem(10);
+      flex-wrap: wrap;
     }
     @include make-col-fluid();
 

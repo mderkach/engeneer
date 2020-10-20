@@ -1,0 +1,5 @@
+mixin card(icon, header, modCls)
+  - cls = modCls || false
+  .card(class=cls)
+    +icon('card-icon', icon)
+    p.card-header !{ header }

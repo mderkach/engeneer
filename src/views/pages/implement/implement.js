@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 // js, scss of components
 import breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
-import screenConsult from '../../components/screen/screenConsult';
 import screenProjects from '../../components/screen/screenProjects';
 import screenAlso from '../../components/screen/screenAlso';
-import card from '../../components/cards/card';
-
+import sliderFluid from '../../components/slider/sliderFluid';
+import fluid from '../../components/fluid/fluid';
+import screenConsult from '../../components/screen/screenConsult';
 // page styles
-import './security.scss';
-// init
-screenConsult.init();
+import './implement.scss';
+
+// init js and components
+sliderFluid.init();
 screenProjects.init();
+screenConsult.init();

@@ -1,0 +1,25 @@
+mixin fluid(header, descr, buttons)
+  - descr = descr
+  .fluid
+    .fluid-pic
+      if block
+        block
+    .fluid-descr
+      h2.fluid-header.h2 !{header}
+      if descr
+        each item in descr
+          p.fluid-text.text-big !{item}
+      if buttons
+        .fluid-descr-buttons
+          each button in buttons
+            - cls = button.className || false
+            if button.type === 'primary'
+              +buttonPrimary({
+                link: button.link,
+                text: button.text,
+              }, cls)
+            if button.type === 'secondary'
+              +buttonSecondary({
+                link: button.link,
+                text: button.text,
+              }, cls)

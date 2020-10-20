@@ -21,87 +21,62 @@ block content
       )
       h2.services__header.h2 Повышение осведомленности
   .services__fluid
-    .services__fluid-container
-      .services__fluid-pic
-        include ../../components/slider/sliderFluid
-      .services__fluid-descr
-        h2.services__fluid-header.h2
-          | Разработка и дизайн
-          br
-          | интерактивных курсов
-        p.services__fluid-text.text-big Уникальная услуга по разработке электронных дистанционных курсов по актуальным для вас темам. Педагогический дизайн. AGILE подход и авторские методики от сертифицированных международными органами по стандартизации  специалистов-практиков
-        .services__fluid-descr-buttons
-          +buttonPrimary({
-            link: '#',
-            text: 'Бесплатная консультация'
-          }, 'text-big')
-          +buttonSecondary({
-            link: '#',
-            text: 'Подробнее'
-          }, 'text-big')
-    .services__fluid-container
-      .services__fluid-pic
-        include ../../components/slider/sliderFluid
-      .services__fluid-descr
-        h2.services__fluid-header.h2
-          | Памятки, руководства, скринсейверы,
-          br
-          | видеоролики, плакаты и другие
-          br
-          | обучающие материалы
-        .services__fluid-descr-buttons
-          +buttonPrimary({
-            link: '#',
-            text: 'Бесплатная консультация'
-          }, 'text-big')
-          +buttonSecondary({
-            link: '#',
-            text: 'Подробнее'
-          }, 'text-big')
-    .services__fluid-container
-      .services__fluid-pic
-        include ../../components/slider/sliderFluid
-      .services__fluid-descr
-        h2.services__fluid-header.h2
-          | Разработка и внедрение внтуреннего
-          br
-          | портала по повышению уровня
-          br
-          | осведомленности сотрудников
-        p.services__fluid-text.text-big Обеспечение оперативного доступа к большому количеству информации, своевременные коммуникации с ответственными лицами из различных подразделений, управление задачами  и другие функции в брендированной usability оболочке
-        .services__fluid-descr-buttons
-          +buttonPrimary({
-            link: '#',
-            text: 'Бесплатная консультация'
-          }, 'text-big')
-          +buttonSecondary({
-            link: '#',
-            text: 'Подробнее'
-          }, 'text-big')
-    .services__fluid-container
-      .services__fluid-pic
-        include ../../components/slider/sliderFluid
-      .services__fluid-descr
-        h2.services__fluid-header.h2
-          | Семинары, игры и тренинги по
-          br
-          | индивидуальным сценариям
-        p.services__fluid-text.text-big
-          | Интерактивные методики проведения обучающих
-          br
-          | мероприятий и отсутствие шаблонных схем
-          br
-          | подачи информации делают наши курсы увлекательными,
-          br
-          | благодаря чему сотрудники легко и качественно
-          br
-          | усваивают информацию, а Заказчик получает ощутимую
-          br
-          | практическую пользу.
-        p.services__fluid-text.text-big
-          | Для достижения наилучшего результата
-          br
-          |перед началом обучения мы:
+    +fluid(
+      'Разработка и дизайн <br/> интерактивных курсов',
+      ['Уникальная услуга по разработке электронных дистанционных курсов по актуальным для вас темам. Педагогический дизайн. AGILE подход и авторские методики от сертифицированных международными органами по стандартизации  специалистов-практиков'],
+      [{
+          type: 'primary',
+          link: '#',
+          text: 'Бесплатная консультация',
+          class: 'text-big'
+        },{
+          type: 'secondary',
+          link: '#',
+          text: 'Подробнее',
+          class: 'text-big'
+        }]
+    )
+      include ../../components/slider/sliderFluid
+    +fluid(
+      'Памятки, руководства, скринсейверы <br/> видеоролики, плакаты и другие <br/> обучающие материалы',
+      false,
+      [{
+          type: 'primary',
+          link: '#',
+          text: 'Бесплатная консультация',
+          class: 'text-big'
+        },{
+          type: 'secondary',
+          link: '#',
+          text: 'Подробнее',
+          class: 'text-big'
+      }]
+    )
+      include ../../components/slider/sliderFluid
+    +fluid(
+      'Разработка и внедрение внтуреннего <br/> портала по повышению уровня <br/> осведомленности сотрудников',
+      ['Обеспечение оперативного доступа к большому количеству информации, своевременные коммуникации с ответственными лицами из различных подразделений, управление задачами  и другие функции в брендированной usability оболочке'],
+      [{
+          type: 'primary',
+          link: '#',
+          text: 'Бесплатная консультация',
+          class: 'text-big'
+        },{
+          type: 'secondary',
+          link: '#',
+          text: 'Подробнее',
+          class: 'text-big'
+      }]
+    )
+      include ../../components/slider/sliderFluid
+    +fluid(
+      'Семинары, игры и тренинги по <br /> индивидуальным сценариям',
+      [
+      'Интерактивные методики проведения обучающих <br/> мероприятий и отсутствие шаблонных схем <br/> подачи информации делают наши курсы увлекательными, <br/> благодаря чему сотрудники легко и качественно <br/> усваивают информацию, а Заказчик получает ощутимую <br/> практическую пользу.',
+      'Для достижения наилучшего результата <br/> перед началом обучения мы:'
+      ],
+    )
+      include ../../components/slider/sliderFluid
   .services__row
     +wrapper()
       .services__row-wrapper

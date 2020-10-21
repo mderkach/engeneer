@@ -124,4 +124,42 @@
       transform: rotate(180deg);
     }
   }
+
+  &__works {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
+    padding: rem(40) 0 rem(45);
+
+    &-list {
+      @include make-col-fluid();
+
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: rem(16);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &-counter {
+        @include size(rem(30));
+        @include font-size(14);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: rem(10);
+        border-radius: 50%;
+        background-color: $red;
+        color: $white;
+      }
+    }
+  }
 }

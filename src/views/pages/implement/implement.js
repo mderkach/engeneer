@@ -38,6 +38,10 @@ const implement = {
 
       this.truncateText(toTruncate);
 
+      window.addEventListener('resize', () => {
+        this.truncateText(toTruncate);
+      });
+
       trigger.addEventListener('click', () => {
         this.accordion.classList.toggle('is-collapsed');
         if (this.accordion.classList.contains('is-collapsed')) {

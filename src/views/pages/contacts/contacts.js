@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-// page styles
-import './contacts.scss';
 
 // js, scss of components
 import header from '../../modules/header/header';
@@ -9,6 +7,9 @@ import toolbar from '../../modules/toolbar/toolbar';
 import formMessage from '../../components/form/formMessage';
 import screenCallback from '../../components/screen/screenCallback';
 import map from '../../components/map/map';
+
+// page styles
+import './contacts.scss';
 
 // initialise components and modules
 screenCallback.init();

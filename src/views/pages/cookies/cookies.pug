@@ -1,0 +1,34 @@
+extends ../../layout/main
+
+block variables
+  - title = 'Engeneer';
+  - description = '';
+  - theme = '#e10303';
+  - slug = 'cookies';
+  - pageClass = slug + '-page';
+
+block content
+  section.cookies
+    +wrapper(slug)
+      .cookies-block
+        h2.cookies-header.h2 Уважаемый посетитель сайта
+        p.text-big Наш сайт использует для работы файлы Сookie: это помогает нам лучше понимать вас, делать сайт удобнее и информативнее.
+        p.text-big Чтобы получить доступ к полной версии сайта, подтвердите согласие на использование Cookie.
+        .cookies-button_wrapper
+          +buttonPrimary({
+            link: '#',
+            text: 'Принять'
+          })
+          +buttonSimple({
+            link: '/',
+            text: 'Вернуться на главную страницу'
+          })
+        p.text-big
+          | Если вы не согласны с использованием Cookie или хотите связаться с нами, пишите на эл. почту
+          span.inherit
+            +icon('icon', 'mail')
+            a.inherit(href="mailto: info@tс-engineer.ru") info@tс-engineer.ru
+          br
+          |или заказывайте обратный звонок в форме ниже
+      +pic('cookies-icon', './assets/img/cookies.png')
+  include ../../components/screen/screenCallback

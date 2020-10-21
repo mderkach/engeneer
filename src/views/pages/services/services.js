@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-// page styles
-import './services.scss';
 
 // js, scss of components
 import button from '../../components/button/button';
@@ -10,6 +8,10 @@ import screenPartners from '../../components/screen/screenPartners';
 import screenProjects from '../../components/screen/screenProjects';
 import screenAlso from '../../components/screen/screenAlso';
 import fluid from '../../components/fluid/fluid';
+
+// page styles
+import './services.scss';
+
 // init
 sliderFluid.init();
 screenProjects.init();

@@ -7,8 +7,6 @@
     padding-left: rem(10);
   }
 
-  padding-bottom: rem(45);
-
   &__container {
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
     @include media-breakpoint-between(0, xs) {
@@ -23,7 +21,7 @@
         padding: rem(20) rem(10);
       }
 
-      margin-top: rem(40);
+      margin: rem(40) 0;
       padding: rem(40) rem(65);
       border: 1px solid $red;
     }
@@ -33,6 +31,10 @@
     @include media-breakpoint-between(0, xs) {
       padding-right: rem(10);
       padding-left: rem(10);
+    }
+
+    &.mt {
+      margin-top: rem(50);
     }
   }
 
@@ -77,6 +79,49 @@
       @include make-col-fluid();
 
       margin-bottom: rem(20);
+    }
+  }
+
+  &__accordion {
+    @include make-col-fluid();
+
+    display: flex;
+
+    &.is-collapsed {
+      .implement__accordion-icon {
+        transform: rotate(0);
+      }
+    }
+
+    p {
+      position: relative;
+      max-width: (1095/1170) * 100%;
+      transition: all 0.3s ease;
+    }
+
+    &_wrapper {
+      @include media-breakpoint-between(0, xs) {
+        padding-right: rem(10);
+        padding-left: rem(10);
+
+        .container {
+          row-gap: 0;
+        }
+      }
+
+      padding: rem(64) 0;
+      background: #f9f9f9;
+    }
+
+    &-header {
+      @include make-col-fluid();
+    }
+
+    &-icon {
+      @include size(rem(28));
+
+      transition: all 0.3s ease;
+      transform: rotate(180deg);
     }
   }
 }

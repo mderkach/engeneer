@@ -2,5 +2,7 @@
 
 @mixin size($width, $height: $width) {
   width: $width;
+  min-width: $width;
   height: $height;
+  min-height: $height;
 }

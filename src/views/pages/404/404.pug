@@ -1,0 +1,25 @@
+extends ../../layout/main
+
+block variables
+  - title = 'Engeneer';
+  - description = '';
+  - theme = '#e10303';
+  - slug = 'not-found';
+  - pageClass = slug + '-page';
+
+block content
+  section.not-found
+    +wrapper(slug)
+      h2.not-found-header.h2
+        | Уважаемый посетитель сайта
+        br
+        | Компании&nbsp;
+        span.inherit Engineer
+      p.text-big.text-center Вы находитесь здесь, потому что ввели адрес страницы, которая уже не существует или была перемещена по другому адресу
+
+      +buttonPrimary({
+        link: '/',
+        text: 'Вернуться на Главную страницу'
+      }, 'not-found-back')
+  +pic('not-found-pic', './assets/img/404.png')
+  include ../../components/screen/screenCallback

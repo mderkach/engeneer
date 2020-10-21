@@ -1,0 +1,54 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.not-found {
+  @include media-breakpoint-between(0, xs) {
+    padding: rem(20) rem(10);
+  }
+
+  padding: rem(55) 0 rem(20);
+
+  &__container {
+    @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include media-breakpoint-between(0, xs) {
+      @include make-grid-container(1, $grid-desktop-gap-col);
+    }
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &-header {
+    @include make-col-fluid();
+
+    text-align: center;
+
+    .inherit {
+      color: $red;
+    }
+  }
+
+  .text-big {
+    @include make-col-fluid();
+
+    margin: rem(30) 0;
+  }
+
+  &-back {
+    @include make-col-position(4, 9);
+    @include media-breakpoint-down(lg) {
+      @include make-col-fluid();
+    }
+  }
+
+  &-pic {
+    @include media-breakpoint-between(0, xs) {
+      top: rem(-40);
+      margin-bottom: rem(-40);
+    }
+
+    position: relative;
+    top: rem(-95);
+    margin-bottom: rem(-95);
+  }
+}

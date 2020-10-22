@@ -1,7 +1,6 @@
 @use 'src/scss/utils/vars' as *;
 @use 'src/scss/utils/mixins' as *;
-
-@import 'swiper/swiper';
+@use 'swiper/swiper' as *;
 
 .slider {
   @include make-col-fluid();

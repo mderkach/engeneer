@@ -12,14 +12,19 @@ mixin fluid(header, descr, buttons)
       if buttons
         .fluid-descr-buttons
           each button in buttons
-            - cls = button.className || false
+            - cls = button.class || false
             if button.type === 'primary'
               +buttonPrimary({
                 link: button.link,
                 text: button.text,
               }, cls)
-            if button.type === 'secondary'
+            else if button.type === 'secondary'
               +buttonSecondary({
+                link: button.link,
+                text: button.text,
+              }, cls)
+            else
+              +buttonSimple({
                 link: button.link,
                 text: button.text,
               }, cls)

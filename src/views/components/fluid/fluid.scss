@@ -3,7 +3,7 @@
 
 .fluid {
   @include media-breakpoint-up(xl) {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: minmax(0, 950/1920 * 100%) minmax(0, 950/1920 * 100%);
     gap: 0 rem(15);
 
     &:nth-child(even) {

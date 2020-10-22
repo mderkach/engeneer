@@ -1,0 +1,18 @@
+mixin formSearch(cls)
+  - cls = cls || false
+  form.form-search(class=cls)
+    input(
+      type='text'
+      name='search'
+      placeholder='Введите запрос'
+    ).form-search__input
+    button(
+      type='submit'
+    ).form-search__submit
+      +icon('icon', 'loupe')
+    p.form-search__results
+      |Найдено
+      //- counter inserts in js
+      span
+      //- counter inserts in js
+      |публикаций

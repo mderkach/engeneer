@@ -26,6 +26,10 @@
   &__item {
     position: relative;
 
+    .icon {
+      fill: $black;
+    }
+
     &:hover {
       cursor: pointer;
 
@@ -37,6 +41,10 @@
         &-descr {
           color: $red;
         }
+      }
+
+      .icon {
+        fill: $red;
       }
     }
 

@@ -1,0 +1,50 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.form-search {
+  position: relative;
+
+  &__input {
+    @include font-size(14);
+
+    width: 100%;
+    padding: rem(15) rem(25);
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background: #fff;
+    color: $black;
+  }
+
+  &__submit {
+    position: absolute;
+    top: rem(10);
+    right: rem(7);
+    z-index: 1;
+    outline: 0;
+
+    .icon {
+      fill: $black;
+    }
+
+    &:hover {
+      .icon {
+        fill: $red;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__results {
+    @include font-size(14);
+
+    display: none;
+    margin-top: rem(20);
+
+    span {
+      color: $red;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.search {
+  &__section {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+  }
+
+  &__container {
+    @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include media-breakpoint-between(0, xs) {
+      @include make-grid-container(1, $grid-desktop-gap-col);
+    }
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    @include make-col-fluid();
+
+    margin-bottom: rem(45);
+    text-align: center;
+  }
+
+  &__form {
+    @include make-col-fluid();
+  }
+
+  &__result {
+    &-wrapper {
+      @include make-col-fluid();
+
+      overflow: hidden;
+      height: rem(40);
+      padding-top: rem(40);
+      transition: transform 0.3s ease;
+      transform: scaleY(0);
+      transform-origin: top;
+
+      &.has-result {
+        height: 100%;
+        transform: scaleY(1);
+      }
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+      margin-bottom: rem(20);
+      padding-bottom: rem(20);
+      border-bottom: 1px solid #f3f3f3;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      time {
+        color: #616161;
+      }
+
+      h2,
+      p {
+        color: $black;
+      }
+
+      h2 {
+        margin: rem(8) 0;
+      }
+    }
+  }
+}

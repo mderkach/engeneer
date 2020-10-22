@@ -1,7 +1,7 @@
 nav.toolbar
   +wrapper('toolbar')
     .toolbar__item
-      a.toolbar__item-descr(href="#") Услуги
+      a.toolbar__item-descr(href="/services.html") Услуги
       .toolbar__item-dropdown
         .toolbar__item-dropdown-block
           p.toolbar__item-dropdown-header Управление ИБ
@@ -39,6 +39,7 @@ nav.toolbar
     .toolbar__item
       a.toolbar__item-descr(href="#") О нас
     .toolbar__item
-      a.toolbar__item-descr(href="#") Контакты
+      a.toolbar__item-descr(href="/contacts.html") Контакты
     .toolbar__item
-      +icon('icon', 'loop')
+      a(href="/search.html")
+        +icon('icon', 'loop')

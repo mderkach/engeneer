@@ -1,0 +1,105 @@
+@use 'src/scss/utils/vars' as *;
+@use 'src/scss/utils/mixins' as *;
+
+.article {
+  @include media-breakpoint-between(0, xs) {
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
+
+  &__section {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+  }
+
+  &__container {
+    @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include media-breakpoint-between(0, xs) {
+      @include make-grid-container(1, $grid-desktop-gap-col);
+    }
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    @include make-col-fluid();
+
+    margin-bottom: rem(20);
+    text-align: left;
+  }
+
+  &__date {
+    @include make-col-fluid();
+
+    margin-bottom: rem(20);
+    color: #9e9e9e;
+  }
+
+  &__banner {
+    width: 100%;
+    height: auto;
+  }
+
+  &__body {
+    @include make-col-fluid();
+
+    padding: rem(30) 0 rem(25);
+
+    h2 {
+      @include font-size(30);
+
+      margin-bottom: rem(20);
+      text-align: left;
+    }
+
+    p {
+      @include font-size(20);
+
+      margin-bottom: rem(20);
+      text-align: left;
+    }
+  }
+
+  &-link {
+    justify-content: flex-start;
+    width: auto;
+    color: #9e9e9e;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__more {
+    @include media-breakpoint-between(0, xs) {
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+
+    &-link {
+      @include make-col-position(4, 9);
+      @include media-breakpoint-between(0, xs) {
+        @include make-col-fluid();
+
+        margin: 0;
+      }
+
+      justify-content: center;
+      margin: rem(30) 0;
+    }
+
+    .fluid {
+      .fluid {
+        &-descr {
+          &-buttons {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

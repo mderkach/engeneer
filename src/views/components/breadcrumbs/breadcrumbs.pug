@@ -1,5 +1,5 @@
 mixin breadcrumbs(items)
-  .breadcrumbs__wrapper
+  nav.breadcrumbs__wrapper
     each item, index in items
       if index !== items.length - 1
         a.breadcrumbs__item(href=item.link) #{item.name}

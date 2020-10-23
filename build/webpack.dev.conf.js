@@ -17,42 +17,6 @@ const devWebpackConfig = merge(BaseWebpackConfig, {
       errors: true,
     },
   },
-  module: {
-    rules: [
-      {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-          outputPath: `./${BaseWebpackConfig.externals.paths.assets}`,
-          publicPath: './assets/',
-        },
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: { sourceMap: true },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              postcssOptions: {
-                config: `${BaseWebpackConfig.externals.paths.build}/postcss.config.js`,
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
-          },
-        ],
-      },
-    ],
-  },
   plugins: [
     new Webpack.SourceMapDevToolPlugin({
       filename: '[file].map',

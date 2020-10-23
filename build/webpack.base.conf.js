@@ -58,9 +58,15 @@ const entryPoints = { ...MAIN_ENTRY, ...DYNAMIC_ENTRY };
 
 // plugins
 const plugins = [
-  new CleanWebpackPlugin({
-    verbose: true,
-  }),
+  // Automatic creation any html pages (Don't forget to RERUN dev server)
+  ...PAGES.map(
+    (page) =>
+      new HtmlWebpackPlugin({
+        template: `${PATHS.pages}/${page.replace(/\.pug/, '')}/${page}`,
+        filename: `./${page.replace(/\.pug/, '.html')}`,
+        chunks: ['app', `${page.replace(/\.pug/, '')}`],
+      }),
+  ),
   // load svg sprite
   new SpriteLoaderPlugin({
     plainSprite: true,
@@ -74,19 +80,13 @@ const plugins = [
       { from: `${PATHS.src}/static`, to: '' },
     ],
   }),
-  // Automatic creation any html pages (Don't forget to RERUN dev server)
-  ...PAGES.map(
-    (page) =>
-      new HtmlWebpackPlugin({
-        template: `${PATHS.pages}/${page.replace(/\.pug/, '')}/${page}`,
-        filename: `./${page.replace(/\.pug/, '.html')}`,
-        chunks: ['app', `${page.replace(/\.pug/, '')}`],
-      }),
-  ),
 ];
 
 if (isProd()) {
   plugins.push(
+    new CleanWebpackPlugin({
+      verbose: true,
+    }),
     new MiniCssExtractPlugin({
       filename: ({ chunk }) => `${PATHS.assets}css/${chunk.name.replace('/js/', '/css/')}.css`,
     }),

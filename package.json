@@ -4,8 +4,8 @@
   "description": "engeneer",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js --mode development",
-    "build": "webpack --config ./build/webpack.build.conf.js --mode production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.conf.js --mode development",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.build.conf.js --mode production",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
     "stylelint": "stylelint ./src/**/*.scss",
@@ -13,7 +13,7 @@
     "webp": "node ./build/webpack.webp.js"
   },
   "browserslist": [
-    "> 1%",
+    "> 0.25%, not dead",
     "last 3 version"
   ],
   "author": "https://github.com/mderkach",
@@ -24,7 +24,9 @@
     "babel",
     "babel7",
     "scss",
-    "pug"
+    "pug",
+    "dart-sass",
+    "es6"
   ],
   "license": "ISC",
   "husky": {
@@ -55,6 +57,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
@@ -104,6 +107,7 @@
     "svgo-loader": "^2.2.1",
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-import-glob-loader": "^1.6.3",

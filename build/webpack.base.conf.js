@@ -9,6 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssNano = require('cssnano');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isProd = function () {
   if (process.argv.includes('production')) {
@@ -89,6 +90,7 @@ if (isProd()) {
     new MiniCssExtractPlugin({
       filename: ({ chunk }) => `${PATHS.assets}css/${chunk.name.replace('/js/', '/css/')}.css`,
     }),
+    new BundleAnalyzerPlugin(),
   );
 }
 

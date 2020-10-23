@@ -2,25 +2,47 @@
 @use 'libs' as *;
 @use 'mixins' as *;
 
+.h1 {
+  @include font-size(60);
+  @include media-breakpoint-between(0, md) {
+    @include font-size(40);
+  }
+}
+
 .h2 {
   @include font-size(30);
+  @include media-breakpoint-between(0, md) {
+    @include font-size(24);
+  }
 }
 
 .h3 {
   @include font-size(18);
+  @include media-breakpoint-between(0, md) {
+    @include font-size(16);
+  }
 }
 
 .text {
   &-big {
     @include font-size(20);
+    @include media-breakpoint-between(0, md) {
+      @include font-size(18);
+    }
   }
 
   &-regular {
     @include font-size(18);
+    @include media-breakpoint-between(0, md) {
+      @include font-size(16);
+    }
   }
 
   &-small {
     @include font-size(12);
+    @include media-breakpoint-between(0, md) {
+      @include font-size(10);
+    }
   }
 
   &-center {

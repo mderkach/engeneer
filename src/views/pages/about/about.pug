@@ -1,0 +1,66 @@
+extends ../../layout/main
+
+block variables
+  - title = 'Engeneer';
+  - description = '';
+  - theme = '#e10303';
+  - slug = 'about';
+  - pageClass = slug + '-page';
+
+block content
+  section.about
+    +wrapper(slug)
+      h1.about__heading.h1
+        |Компания
+        span.inherit &nbsp;Engineer
+      h2.about__heading.h2 Экспертные решения информационной безопасности
+      p.about__text.text-big Компания Инженер - это команда исследователей, влюбленных в свое дело, которые обладают уникальными знаниями и опытом, горят идеями и никогда не стоят на месте. В нашей команде каждый - это человек Дела, поэтому  с нами работать надежно и приятно. Мы делаем работу качественно, с полной отдачей и всегда доводим проекты до успешного завершения.
+  section.about__mission-wrapper
+    +wrapper(slug)
+      .about__mission
+        h2.about__mission-header.h2 Наша миссия - делать мир безопасным и полным возможностей
+        p.text-big
+          | Более 30 выполненных
+          br
+          | проектов по ISO27001
+          br
+          | за последние 5 лет
+        +icon('about__mission-middle', '30prj')
+        +pic('about__mission-pic', './assets/img/about-1.jpg')
+        +pic('about__mission-pic about__mission-pic_wide', './assets/img/about-2.jpg')
+        p.text-big Команда влюбленных в работу профессионалов
+        p.text-big Работаем с 1999 года
+        +icon('about__mission-middle', '21y')
+        +pic('about__mission-pic', './assets/img/about-3.jpg')
+  include ../../components/screen/screenCallback
+  include ../../components/screen/screenProjects
+  include ../../components/screen/screenPartners
+  section.about__feedback
+    +wrapper(slug)
+      h2.about__heading.h2 Feedback
+      include ../../components/slider/sliderFeedback
+  +screenConsult('Заказать <br/> бесплатную консультацию', './assets/img/man.png')
+  section.about__leave
+    +pic('about__leave-bg', './assets/img/back-gradient.jpg')
+    +wrapper(slug)
+      +pic('about__leave-pic', './assets/img/keyboard.png')
+      .about__leave-form-wrapper
+        h2.h2 Оставьте отзыв о нас
+        p.text-big Что вы думаете о нас, нашей работе, напишите отзыв
+        +formMessage('about__leave-form', [
+            {
+              type: 'text',
+              name: 'name',
+              placeholder: 'Ваше имя'
+            },
+            {
+              type: 'email',
+              name: 'mail',
+              placeholder: 'Ваш email'
+            },
+            {
+              type: 'textarea',
+              name: 'message',
+              placeholder: 'Текст сообщения'
+            },
+          ])

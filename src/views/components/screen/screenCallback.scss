@@ -43,7 +43,7 @@
 
     &_upper {
       @include media-breakpoint-down(md) {
-        width: 50%;
+        width: 100%;
       }
 
       position: absolute;

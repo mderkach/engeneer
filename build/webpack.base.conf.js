@@ -96,6 +96,7 @@ if (isProd()) {
 
 // BASE config
 module.exports = {
+  mode: isProd() ? 'production' : 'development',
   externals: {
     paths: PATHS,
   },
@@ -126,6 +127,7 @@ module.exports = {
               publicPath: `${PATHS.assets}img/svg/`,
             },
           },
+          // '@svgr/webpack',
           {
             loader: 'svgo-loader',
             options: {

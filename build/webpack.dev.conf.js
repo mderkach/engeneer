@@ -5,13 +5,13 @@ const BaseWebpackConfig = require('./webpack.base.conf');
 
 const devWebpackConfig = merge(BaseWebpackConfig, {
   // DEV config
-  mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
   devServer: {
     historyApiFallback: true,
     compress: true,
     contentBase: BaseWebpackConfig.externals.paths.dist,
     port: 8080,
+    openPage: '',
     overlay: {
       warnings: true,
       errors: true,

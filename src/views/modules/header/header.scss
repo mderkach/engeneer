@@ -14,10 +14,17 @@
     @include media-breakpoint-down(lg) {
       @include make-grid-container($grid-desktop, $grid-desktop-gap-col, $grid-desktop-gap-row);
     }
+    @include media-breakpoint-down(md) {
+      @include make-grid-container(2, 10px, 10px);
+    }
   }
 
   &__upper {
     @include make-col-fluid();
+    @include media-breakpoint-between(0, md) {
+      grid-row: 1 /1;
+      grid-column: 2 /-1;
+    }
     @include media-breakpoint-down(sm) {
       grid-template-columns: 1fr;
     }
@@ -34,7 +41,8 @@
 
         padding-left: 0;
       }
-      @include media-breakpoint-between(0, xs) {
+      @include media-breakpoint-between(0, md) {
+        flex-direction: column;
         flex-wrap: wrap;
       }
 
@@ -48,8 +56,8 @@
       @include media-breakpoint-between(0, xs) {
         align-items: flex-start;
         width: 100%;
-        height: rem(46);
-        margin-bottom: rem(16);
+        height: auto;
+        margin-bottom: rem(8);
       }
 
       display: flex;
@@ -62,6 +70,12 @@
       }
 
       &_link {
+        @include media-breakpoint-between(0, xs) {
+          @include font-size(12);
+
+          margin: 0;
+        }
+
         display: block;
         margin-bottom: rem(2);
         margin-left: rem(4);
@@ -75,18 +89,28 @@
   }
 
   &__logo {
+    @include media-breakpoint-up(xl) {
+      @include make-col-size(3, 2);
+    }
     @include media-breakpoint-up(lg) {
       @include make-col-size(4, 2);
     }
-    @include media-breakpoint-between(md, md) {
-      @include make-col-size(5, 2);
-    }
     @include media-breakpoint-between(0, md) {
-      grid-row: auto;
-      grid-column: 1 / -1;
+      grid-row: 1 /1;
+      grid-column: 1 / 1;
+      max-height: 100%;
     }
 
     max-height: 128px;
+
+    img {
+      @include media-breakpoint-between(0, md) {
+        object-fit: contain;
+      }
+
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__descr {
@@ -98,7 +122,7 @@
     @include media-breakpoint-between(0, md) {
       grid-row: auto;
       grid-column: 1 / -1;
-      margin-top: rem(32);
+      margin-top: rem(16);
       padding-left: 0;
     }
 
@@ -109,7 +133,7 @@
 
     &::before {
       @include media-breakpoint-between(0, md) {
-        top: -20px;
+        top: -10px;
         left: 0;
         width: 100%;
         height: 1px;

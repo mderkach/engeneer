@@ -11,8 +11,8 @@
   &__container {
     @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
     @include media-breakpoint-between(0, xs) {
-      grid-template-columns: 100%;
-      gap: rem(15) 0;
+      grid-template-columns: 1fr 1fr;
+      gap: rem(15);
     }
 
     position: relative;
@@ -32,12 +32,19 @@
 
   &-img {
     @include make-col-size(3, 1);
+    @include media-breakpoint-between(0, xs) {
+      @include make-col-fluid();
+    }
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     &.certificate {
+      @include media-breakpoint-between(0, xs) {
+        @include make-col-size(1);
+      }
+
       border: 1px solid #e8e9eb;
       border-radius: 3px;
       box-shadow: 0 8px 16px rgba(50, 50, 71, 0.06);

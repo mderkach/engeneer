@@ -114,6 +114,7 @@
     "webpack-merge": "^5.2.0"
   },
   "dependencies": {
+    "glightbox": "^3.0.5",
     "inputmask": "^5.0.5",
     "swiper": "^6.3.4",
     "ymaps": "^0.2.1"

@@ -13,3 +13,4 @@ import './index.scss';
 screenConsult.init();
 screenCallback.init();
 screenProjects.init();
+screenPartners.init();

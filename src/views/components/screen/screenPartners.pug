@@ -2,6 +2,8 @@ section.screen-partners
   +wrapper('screen-partners')
     h2.h2.screen-partners-heading Партнёры - сертификационные органы
     +pic('screen-partners-img', './assets/img/bsi.png')
-    +pic('screen-partners-img certificate', './assets/img/cert-1.png')
-    +pic('screen-partners-img certificate', './assets/img/cert-2.png')
+    a.screen-partners-img.certificate.glightbox(href='/assets/img/cert-1.png')
+      +pic('', './assets/img/cert-1.png')
+    a.screen-partners-img.certificate.glightbox(href='/assets/img/cert-2.png')
+      +pic('', './assets/img/cert-2.png')
     +pic('screen-partners-img', './assets/img/tuv.png')

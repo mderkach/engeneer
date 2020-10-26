@@ -1,7 +1,10 @@
 nav.toolbar
+  button.toolbar__mobile-trigger.hamburger.hamburger--spin(type='button')
+    span.hamburger-box
+      span.hamburger-inner
   +wrapper('toolbar')
     .toolbar__item
-      a.toolbar__item-descr(href="/services.html") Услуги
+      a.toolbar__item-descr(href="#") Услуги
       .toolbar__item-dropdown
         .toolbar__item-dropdown-block
           p.toolbar__item-dropdown-header Управление ИБ
@@ -37,7 +40,7 @@ nav.toolbar
             a.toolbar__item-dropdown-link(href="#") Подготовка и проведение мероприятий
 
     .toolbar__item
-      a.toolbar__item-descr(href="#") О нас
+      a.toolbar__item-descr(href="/about.html") О нас
     .toolbar__item
       a.toolbar__item-descr(href="/contacts.html") Контакты
     .toolbar__item

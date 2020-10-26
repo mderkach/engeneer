@@ -1,19 +1,17 @@
-// const hamburger = document.querySelector('.hamburger');
+const hamburger = {
+  el: document.querySelector('.hamburger'),
+  init() {
+    if (this.el) {
+      this.el.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Toggle class "is-active"
 
-// // On click
+        this.el.classList.toggle('is-active');
 
-// if (hamburger) {
+        // Do something else, like open/close menu
+      });
+    }
+  },
+};
 
-//   hamburger.addEventListener('click', function () {
-
-//     // Toggle class "is-active"
-
-//     hamburger.classList.toggle('is-active');
-
-//     // Do something else, like open/close menu
-
-//   });
-
-// }
-
-// console.log('hamb loaded');
+export default hamburger;

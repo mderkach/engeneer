@@ -34,3 +34,11 @@ $container-max-widths: (
   lg: 960px,
   xl: 1170px,
 );
+
+// hmburgers
+$hamburger-padding-x: 0 !default;
+$hamburger-padding-y: 10px !default;
+$hamburger-types: (spin);
+$hamburger-layer-width: 20px !default;
+$hamburger-layer-height: 2px !default;
+$hamburger-layer-spacing: 3px !default;

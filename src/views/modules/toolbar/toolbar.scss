@@ -197,22 +197,23 @@
           transform: scaleY(1);
         }
       }
+      @include media-breakpoint-between(0, xs) {
+        &:hover,
+        &:focus {
+          outline: 0;
+        }
 
-      &:hover,
-      &:focus {
-        outline: 0;
-      }
-
-      ~ .container {
-        height: 0;
-        padding: 0;
-        transform: scaleY(0);
-      }
-
-      &.is-active {
         ~ .container {
-          height: 100%;
-          transform: scaleY(1);
+          height: 0;
+          padding: 0;
+          transform: scaleY(0);
+        }
+
+        &.is-active {
+          ~ .container {
+            height: 100%;
+            transform: scaleY(1);
+          }
         }
       }
     }

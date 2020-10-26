@@ -29,6 +29,10 @@ const toolbar = {
     }
 
     this.enableMobileMenu();
+
+    window.addEventListener('resize', () => {
+      this.enableMobileMenu();
+    });
   },
 };
 export default toolbar;

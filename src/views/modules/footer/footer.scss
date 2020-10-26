@@ -37,7 +37,7 @@
   }
 
   &__cell {
-    @include media-breakpoint-between(0, xs) {
+    @include media-breakpoint-down(lg) {
       &:last-child {
         @include make-col-fluid();
       }

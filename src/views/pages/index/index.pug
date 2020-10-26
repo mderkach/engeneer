@@ -20,21 +20,34 @@ block content
     +wrapper(slug)
       .index__cards-item
         +icon('icon-big', 'loop-big')
-        p.index__cards-item-header.--accent Экспертиза в области ИБ
-        p.index__cards-item-descr Некоторые особенности внутренней политики разоблачены! Разнообразный и богатый опыт говорит нам, что внедрение.
-        +buttonPrimary({
-            link: '#',
-            text: 'Подробнее'
-          }, 'btn-small index__btn')
+        p.index__cards-item-header Экспертиза в области ИБ
+        .index__cards-item-body
+          p.index__cards-item-descr Некоторые особенности внутренней политики разоблачены! Разнообразный и богатый опыт говорит нам, что внедрение.
+          +buttonPrimary({
+              link: '#',
+              text: 'Подробнее'
+            }, 'btn-small index__btn')
       .index__cards-item
         +icon('icon-big', 'collab')
         p.index__cards-item-header
           | Управление
           br
           | непрерывностью бизнеса
+        .index__cards-item-body
+          p.index__cards-item-descr Некоторые особенности внутренней политики разоблачены! Разнообразный и богатый опыт говорит нам, что внедрение.
+          +buttonPrimary({
+              link: '#',
+              text: 'Подробнее'
+            }, 'btn-small index__btn')
       .index__cards-item
         +icon('icon-big', 'supp')
         p.index__cards-item-header Управление ИТ
+        .index__cards-item-body
+          p.index__cards-item-descr Некоторые особенности внутренней политики разоблачены! Разнообразный и богатый опыт говорит нам, что внедрение.
+          +buttonPrimary({
+              link: '#',
+              text: 'Подробнее'
+            }, 'btn-small index__btn')
       .index__cards-item.index__cards-item_fluid
         .index__cards-item-left
           +icon('icon-big', 'focus')

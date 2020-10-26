@@ -28,8 +28,3 @@ button {
   @include make-container();
   @include make-grid-container-max-widths();
 }
-
-// custom rules
-.--accent {
-  color: $red;
-}

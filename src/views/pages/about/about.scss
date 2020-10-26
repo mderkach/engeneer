@@ -53,8 +53,13 @@
   &__mission {
     @include make-col-fluid();
     @include media-breakpoint-down(lg) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
+    }
+    @include media-breakpoint-between(sm, lg) {
       grid-auto-rows: rem(300);
+    }
+    @include media-breakpoint-between(0, xs) {
+      grid-auto-rows: minmax(10%, 20%);
     }
 
     display: grid;
@@ -150,7 +155,7 @@
 
     .container {
       @include media-breakpoint-between(0, xs) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
       }
 
       grid-template-columns: repeat(2, 1fr);
@@ -187,7 +192,7 @@
     &-form {
       @include make-grid-container(2, 10px, 16px);
       @include media-breakpoint-between(0, xs) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
       }
 
       width: 100%;

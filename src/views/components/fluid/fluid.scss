@@ -45,7 +45,7 @@
 
     &-buttons {
       @include media-breakpoint-down(sm) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         gap: rem(15);
         margin-top: rem(15);
       }

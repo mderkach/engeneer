@@ -140,6 +140,10 @@
   // implicity of rem function
   $row: 0;
   $col: 0;
+  $fraction: 1fr;
+  @if ($cols == 1) {
+    $fraction: 100%;
+  }
   @if ($col-gap != 0) {
     $col: $col-gap / $context * 1rem;
   } @else {
@@ -152,7 +156,7 @@
   }
   //
   display: grid;
-  grid-template-columns: repeat($cols, 1fr);
+  grid-template-columns: repeat($cols, $fraction);
   gap: $row $col;
   width: 100%;
   margin-right: auto;

@@ -20,7 +20,7 @@
 
   &-body {
     @include media-breakpoint-down(md) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
     }
 
     display: grid;

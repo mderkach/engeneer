@@ -5,7 +5,7 @@
   &__container {
     @include make-grid-container(2, $grid-desktop-gap-col);
     @include media-breakpoint-down(lg) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
       gap: rem(15);
     }
     @include media-breakpoint-between(0, xs) {

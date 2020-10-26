@@ -132,15 +132,12 @@
       }
       @include media-breakpoint-between(0, xs) {
         @include make-col-fluid();
-
-        min-height: rem(210);
       }
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      min-height: rem(250);
       padding: rem(30);
       border: 1px solid #e8e9eb;
       border-radius: 3px;
@@ -236,6 +233,10 @@
       }
 
       &-chevron {
+        @include media-breakpoint-between(0, xs) {
+          height: unset;
+        }
+
         max-width: rem(20);
         height: 100%;
         max-height: rem(115);

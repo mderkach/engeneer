@@ -10,3 +10,4 @@ import footer from './views/modules/footer/footer';
 import toolbar from './views/modules/toolbar/toolbar';
 // init components
 toolbar.init();
+header.init();

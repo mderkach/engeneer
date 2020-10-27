@@ -6,7 +6,7 @@ header.header
           .header__upper-cell_top
             +icon('icon', 'phone')
             a.header__upper-cell_link.text-regular(href="tel:+74957617146") +7 (495) 761-71-46
-          p.header__upper-cell_descr.text-small.light Заказать обратный звонок
+          a.header__upper-cell_descr.text-small.light(href="#callback") Заказать обратный звонок
         .header__upper-cell
           .header__upper-cell_top
             +icon('icon', 'mail')
@@ -17,3 +17,21 @@ header.header
             a.header__upper-cell_link.text-regular(href="tel:+74957617146") Написать в WhatsApp
     +pic('header__logo', './assets/img/logo.png')
     p.header__descr Экспертные решения в области информационной безопасности, IT и непрерывности деятельности. Подготовка к сертификации
+  +form(
+    'header-modal-form',
+    'Заказать обратный звонок',
+    false,
+    [
+      {
+        type: 'text',
+        name: 'name',
+        placeholder: 'Ваше имя'
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        placeholder: 'Телефон'
+      }
+    ],
+    'Перезвоните мне',
+  )

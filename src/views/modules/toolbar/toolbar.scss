@@ -9,6 +9,8 @@
     padding-left: rem(10);
   }
 
+  position: relative;
+  z-index: 2;
   background-color: #f9f9f9;
 
   &__container {

@@ -149,4 +149,26 @@
       background-color: $red;
     }
   }
+
+  &-modal {
+    &-form {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      .form {
+        padding: 0;
+
+        &-header {
+          text-align: center;
+        }
+
+        &-body {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }

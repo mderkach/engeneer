@@ -2,6 +2,9 @@
 import ymaps from 'ymaps';
 import './map.scss';
 
+const pinCoords = [55.847219568883766, 37.65628949999989];
+const mapCenter = [55.847219568883766, 37.65628949999989];
+
 const map = {
   el: document.querySelector('.map'),
   init() {
@@ -10,9 +13,11 @@ const map = {
         .load()
         .then((maps) => {
           const mapObj = new maps.Map(map.el, {
-            center: [-8.369326, 115.166023],
-            zoom: 7,
+            center: mapCenter,
+            zoom: 17,
           });
+          const pin = new maps.Placemark(pinCoords, {});
+          mapObj.geoObjects.add(pin);
         })
         .catch((error) => console.log('Failed to load Yandex Maps', error));
     }

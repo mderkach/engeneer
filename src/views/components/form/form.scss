@@ -38,6 +38,10 @@
     border-radius: 3px;
     background-color: $white;
     color: #313638;
+
+    &::placeholder {
+      color: #313638;
+    }
   }
 
   &-agreement {

@@ -13,6 +13,10 @@
     border-radius: 8px;
     background: #fff;
     color: $black;
+
+    &::placeholder {
+      color: #313638;
+    }
   }
 
   &__submit {

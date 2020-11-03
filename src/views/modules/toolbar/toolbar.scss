@@ -123,6 +123,9 @@
 
       &-header {
         @include font-size(20);
+
+        display: block;
+        color: #313638;
       }
 
       &-block {

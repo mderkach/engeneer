@@ -3,8 +3,8 @@
 
 .fluid {
   @include media-breakpoint-up(xl) {
-    grid-template-columns: minmax(0, 950/1920 * 100%) minmax(0, 950/1920 * 100%);
-    gap: 0 rem(15);
+    grid-template-columns: 50% 50%;
+    gap: 0;
 
     &:nth-child(even) {
       .fluid {
@@ -14,6 +14,8 @@
           grid-column-start: 1;
           grid-column-end: 1;
           align-items: flex-end;
+          padding-right: rem(30);
+          padding-left: rem(10);
           text-align: right;
         }
 
@@ -39,9 +41,15 @@
   display: grid;
 
   &-descr {
+    @include media-breakpoint-down(lg) {
+      padding: 0;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: rem(10);
+    padding-left: rem(30);
 
     &-buttons {
       @include media-breakpoint-down(sm) {

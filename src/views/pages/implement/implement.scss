@@ -93,6 +93,12 @@
       }
     }
 
+    &_trigger {
+      display: block;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
     p {
       position: relative;
       max-width: (1095/1170) * 100%;

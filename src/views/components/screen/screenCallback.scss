@@ -43,6 +43,7 @@
 
     &_upper {
       @include media-breakpoint-down(md) {
+        display: none;
         width: 100%;
       }
 

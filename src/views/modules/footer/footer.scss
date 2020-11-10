@@ -73,6 +73,10 @@
         cursor: pointer;
       }
 
+      &[taget='_blank'] {
+        text-decoration: underline;
+      }
+
       &-icon {
         @include size(rem(24));
       }

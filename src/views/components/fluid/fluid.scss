@@ -71,6 +71,10 @@
 
   &-pic {
     width: 100%;
+
+    .slider-fluid-slide-img {
+      margin-bottom: rem(-5);
+    }
   }
 
   &-header {

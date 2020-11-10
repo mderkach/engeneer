@@ -15,5 +15,5 @@ mixin form(className, header, descr, inputs, btnText)
           name=input.name
           placeholder=input.placeholder
         )
-      a.form-agreement(href="/agreement.docx") Нажимая на кнопку, вы даете согласие на Обработку персональных данных
+      a.form-agreement(href="/agreement.pdf" target="_blank") Нажимая на кнопку, вы даете согласие на Обработку персональных данных
       button.btn.form-submit(type="submit") !{ btnText }

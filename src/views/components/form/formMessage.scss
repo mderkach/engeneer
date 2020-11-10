@@ -25,6 +25,11 @@
     @include make-col-fluid();
 
     color: #828282;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   &-submit {

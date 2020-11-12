@@ -15,7 +15,6 @@
           grid-column-end: 1;
           align-items: flex-end;
           padding-right: rem(30);
-          padding-left: rem(10);
           text-align: right;
         }
 
@@ -42,13 +41,14 @@
 
   &-descr {
     @include media-breakpoint-down(lg) {
+      max-width: 100%;
       padding: 0;
     }
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: rem(10);
+    max-width: rem(584);
     padding-left: rem(30);
 
     &-buttons {

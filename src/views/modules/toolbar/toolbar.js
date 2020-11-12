@@ -10,7 +10,6 @@ const toolbar = {
     if (vw <= 576) {
       this.submenuTrigger.forEach((link) => {
         if (link.nextSibling) {
-          console.log(link);
           link.addEventListener('click', (e) => {
             e.preventDefault();
 

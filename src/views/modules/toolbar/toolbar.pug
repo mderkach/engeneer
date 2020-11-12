@@ -44,5 +44,7 @@ nav.toolbar
     .toolbar__item
       a.toolbar__item-descr(href="/contacts.html") Контакты
     .toolbar__item
-      a(href="/search.html")
+      a.toolbar__item-descr(href="#")
         +icon('icon', 'loupe')
+      .toolbar__item-dropdown.is-search
+        input(type="text", name="search", placeholder="Поиск...")

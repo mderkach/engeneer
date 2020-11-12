@@ -218,6 +218,17 @@
         @include font-size(20);
 
         margin: rem(10) 0 rem(5);
+
+        &_link {
+          @include font-size(20);
+
+          margin: rem(10) 0 rem(5);
+          color: #000;
+
+          &:hover {
+            color: $red;
+          }
+        }
       }
 
       &-descr {

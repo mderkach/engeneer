@@ -11,12 +11,11 @@
 
   &__container {
     @include make-grid-container-max-widths();
-    @include make-grid-container($grid-desktop, $grid-desktop-gap-col);
+    @include make-grid-container($grid-desktop, 0);
     @include media-breakpoint-down(lg) {
       $column: calc(50% - 15px);
 
       grid-template-columns: $column $column;
-      row-gap: rem(30);
     }
     @include media-breakpoint-between(0, md) {
       $column: calc(50% - 8px);
@@ -25,7 +24,7 @@
       gap: rem(16);
     }
 
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 2fr 10fr;
   }
 
   &__upper {
@@ -53,7 +52,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      padding-left: rem(20);
+      padding-left: rem(56);
     }
 
     &-cell {
@@ -130,7 +129,7 @@
       padding-left: 0;
       letter-spacing: normal;
     }
-    @include font-size(25);
+    @include font-size(30);
 
     position: relative;
     padding-left: rem(58);
@@ -148,11 +147,12 @@
       content: '';
       position: absolute;
       top: unset;
-      // bottom: rem(8);
-      left: 20px;
+      bottom: 0;
+      left: rem(28);
       display: block;
-      width: 1px;
-      height: 100%;
+      width: rem(1);
+      height: rem(95);
+      border-radius: rem(2);
       // max-height: rem(105);
       background-color: $red;
     }

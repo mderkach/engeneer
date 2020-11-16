@@ -7,6 +7,11 @@ const toolbar = {
   search: document.querySelector('.toolbar__item.is-search'),
   searchToggle(item) {
     item.classList.toggle('is-active');
+    if (item.classList.contains('is-active')) {
+      item.querySelector('input').focus();
+    } else {
+      item.querySelector('input').blur();
+    }
   },
   enableMobileMenu() {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);

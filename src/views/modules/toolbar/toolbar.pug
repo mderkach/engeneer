@@ -43,8 +43,7 @@ nav.toolbar
       a.toolbar__item-descr(href="/about.html") О нас
     .toolbar__item
       a.toolbar__item-descr(href="/contacts.html") Контакты
-    .toolbar__item
-      a.toolbar__item-descr(href="#")
-        +icon('icon', 'loupe')
-      .toolbar__item-dropdown.is-search
+    .toolbar__item.is-search
+      .toolbar__item-descr
         input(type="text", name="search", placeholder="Поиск...")
+        +icon('icon', 'loupe')

@@ -4,7 +4,7 @@
 @import 'node_modules/hamburgers/_sass/hamburgers/hamburgers';
 
 .toolbar {
-  @include media-breakpoint-between(0, xs) {
+  @include media-breakpoint-between(0, sm) {
     padding-right: rem(10);
     padding-left: rem(10);
   }
@@ -17,7 +17,7 @@
   &__container {
     @include make-grid-container-max-widths();
     @include make-container();
-    @include media-breakpoint-between(0, xs) {
+    @include media-breakpoint-between(0, sm) {
       flex-direction: column;
       align-items: flex-start;
       padding-top: 0;
@@ -68,6 +68,41 @@
     }
 
     position: relative;
+
+    &.is-search {
+      @include media-breakpoint-between(0, sm) {
+        .toolbar__item-descr {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .toolbar__item-descr {
+        display: flex;
+      }
+
+      &.is-active {
+        input {
+          opacity: 1;
+        }
+      }
+
+      input {
+        @include font-size(12);
+
+        display: block;
+        width: 100%;
+        padding: rem(6);
+        border: 1px solid #e8e9eb;
+        border-radius: 3px;
+        background-color: $white;
+        color: #313638;
+        opacity: 0;
+
+        &::placeholder {
+          color: #313638;
+        }
+      }
+    }
 
     .icon {
       fill: $black;
@@ -120,33 +155,6 @@
       background-color: $grayBg;
       white-space: nowrap;
       transition: all 0.5s ease;
-
-      &.is-search {
-        @include media-breakpoint-between(0, xs) {
-          width: 100%;
-        }
-
-        right: 0;
-        left: unset;
-        width: rem(190);
-        padding: rem(10);
-
-        input {
-          @include font-size(12);
-
-          display: block;
-          width: 100%;
-          padding: rem(6);
-          border: 1px solid #e8e9eb;
-          border-radius: 3px;
-          background-color: $white;
-          color: #313638;
-
-          &::placeholder {
-            color: #313638;
-          }
-        }
-      }
 
       &-header {
         @include font-size(20);
@@ -222,7 +230,7 @@
 
   &__mobile {
     &-trigger {
-      @include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(md) {
         display: none;
 
         ~ .container {
@@ -230,7 +238,7 @@
           transform: scaleY(1);
         }
       }
-      @include media-breakpoint-between(0, xs) {
+      @include media-breakpoint-between(0, sm) {
         &:hover,
         &:focus {
           outline: 0;

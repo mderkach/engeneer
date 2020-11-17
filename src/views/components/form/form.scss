@@ -2,7 +2,7 @@
 @use 'src/scss/utils/mixins' as *;
 
 .form {
-  @include media-breakpoint-between(0, xs) {
+  @include media-breakpoint-between(0, md) {
     padding: 0;
   }
 

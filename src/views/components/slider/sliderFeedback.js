@@ -24,9 +24,13 @@ const sliderFeedback = {
     },
     breakpoints: {
       768: {
-        slidesPerView: 3,
+        slidesPerView: 1,
       },
       992: {
+        spaceBetween: 60,
+        slidesPerView: 2,
+      },
+      1200: {
         spaceBetween: 60,
         slidesPerView: 3,
       },

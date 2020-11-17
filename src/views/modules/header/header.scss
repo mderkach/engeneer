@@ -79,6 +79,7 @@
 
           margin: 0;
         }
+        @include font-size(14);
 
         display: block;
         margin-bottom: rem(2);
@@ -117,21 +118,20 @@
       }
 
       width: auto;
+      max-width: rem(180);
       height: auto;
-      // max-height: 128px;
     }
   }
 
   &__descr {
     @include media-breakpoint-down(lg) {
       @include make-col-fluid();
-      @include font-size(25);
 
       padding-left: 0;
       letter-spacing: normal;
     }
     @include make-col-position(2, -1);
-    @include font-size(30);
+    @include font-size(25);
 
     position: relative;
     padding-left: rem(58);

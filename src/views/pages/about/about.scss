@@ -144,9 +144,9 @@
   }
 
   &__leave {
-    @include media-breakpoint-between(0, xs) {
-      padding-right: rem(20);
-      padding-left: rem(20);
+    @include media-breakpoint-between(0, md) {
+      padding-right: rem(10);
+      padding-left: rem(10);
     }
 
     position: relative;
@@ -154,7 +154,7 @@
     padding: rem(45) 0 rem(50);
 
     .container {
-      @include media-breakpoint-between(0, xs) {
+      @include media-breakpoint-between(0, md) {
         grid-template-columns: 100%;
       }
 
@@ -177,6 +177,10 @@
     }
 
     &-pic {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
       max-height: rem(420);
 
       img {
@@ -191,7 +195,7 @@
 
     &-form {
       @include make-grid-container(2, 10px, 16px);
-      @include media-breakpoint-between(0, xs) {
+      @include media-breakpoint-between(0, md) {
         grid-template-columns: 100%;
       }
 

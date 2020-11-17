@@ -78,23 +78,31 @@
 
       .toolbar__item-descr {
         display: flex;
+        align-items: flex-end;
       }
 
       &.is-active {
         input {
+          width: 200px;
           opacity: 1;
         }
       }
 
       input {
         @include font-size(12);
+        @include media-breakpoint-between(0, sm) {
+          position: relative;
+          top: -4px;
+          left: unset;
+        }
 
+        position: absolute;
+        left: -200px;
         display: block;
-        width: 100%;
+        width: 0;
         padding: rem(6);
-        border: 1px solid #e8e9eb;
-        border-radius: 3px;
-        background-color: $white;
+        border-bottom: 1px solid #000;
+        background-color: #f2f2f2;
         color: #313638;
         opacity: 0;
 
@@ -152,7 +160,7 @@
       z-index: 99;
       display: none;
       padding: rem(34) rem(32);
-      background-color: $grayBg;
+      background-color: #f2f2f2;
       white-space: nowrap;
       transition: all 0.5s ease;
 

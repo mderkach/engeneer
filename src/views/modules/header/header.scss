@@ -2,6 +2,9 @@
 @use 'src/scss/utils/mixins' as *;
 
 .header {
+  @include media-breakpoint-down(sm) {
+    padding-bottom: rem(20);
+  }
   @include media-breakpoint-between(0, xs) {
     padding-right: rem(10);
     padding-left: rem(10);
@@ -13,15 +16,10 @@
     @include make-grid-container-max-widths();
     @include make-grid-container($grid-desktop, 0);
     @include media-breakpoint-down(lg) {
-      $column: calc(50% - 15px);
-
-      grid-template-columns: $column $column;
+      grid-template-columns: repeat(2, 1fr);
       row-gap: rem(30);
     }
     @include media-breakpoint-between(0, md) {
-      $column: calc(50% - 8px);
-
-      grid-template-columns: $column $column;
       gap: rem(16);
     }
 
@@ -57,11 +55,15 @@
     }
 
     &-cell {
-      @include media-breakpoint-between(0, xs) {
-        align-items: flex-start;
+      @include media-breakpoint-between(0, lg) {
+        align-items: flex-end;
         width: 100%;
         height: auto;
         margin-bottom: rem(8);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
 
       display: flex;
@@ -102,6 +104,9 @@
       grid-row: 1/1;
       grid-column: 1/1;
     }
+    @include media-breakpoint-down(lg) {
+      max-width: rem(180);
+    }
     @include media-breakpoint-between(0, md) {
       grid-row: 1 /1;
       grid-column: 1 / 1;
@@ -112,13 +117,13 @@
     align-items: center;
 
     img {
-      @include media-breakpoint-between(0, md) {
+      @include media-breakpoint-between(0, xs) {
         object-fit: contain;
+        max-width: 100%;
         max-height: 100%;
       }
 
       width: auto;
-      max-width: rem(180);
       height: auto;
     }
   }
@@ -126,17 +131,23 @@
   &__descr {
     @include media-breakpoint-down(lg) {
       @include make-col-fluid();
-      @include font-size(25);
 
       padding-left: 0;
+      font-size: rem(25);
       letter-spacing: normal;
     }
+    @include media-breakpoint-down(md) {
+      font-size: rem(20);
+    }
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
     @include make-col-position(2, -1);
-    @include font-size(30);
 
     position: relative;
     padding-left: rem(58);
     color: $black;
+    font-size: rem(30);
     letter-spacing: -0.1px;
 
     &::before {

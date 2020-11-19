@@ -33,6 +33,7 @@ const toolbar = {
       this.trigger.addEventListener('click', (e) => {
         e.preventDefault();
         this.trigger.classList.toggle('is-active');
+        document.querySelector('.toolbar').classList.toggle('is-active');
       });
     }
 

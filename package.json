@@ -83,6 +83,7 @@
     "mini-css-extract-plugin": "^1.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.1.4",
+    "postcss-combine-media-query": "^1.0.1",
     "postcss-discard-duplicates": "^4.0.2",
     "postcss-loader": "^4.0.4",
     "postcss-move-props-to-bg-image-query": "^4.0.0",

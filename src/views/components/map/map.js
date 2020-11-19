@@ -17,6 +17,7 @@ const map = {
             zoom: 17,
           });
           const pin = new maps.Placemark(pinCoords, {});
+          if (window.matchMedia('(max-width: 576px)')) mapObj.behaviors.disable('scrollZoom');
           mapObj.geoObjects.add(pin);
         })
         .catch((error) => console.log('Failed to load Yandex Maps', error));

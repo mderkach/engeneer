@@ -1,7 +1,8 @@
 nav.toolbar
-  button.toolbar__mobile-trigger.hamburger.hamburger--spin(type='button')
-    span.hamburger-box
-      span.hamburger-inner
+  +wrapper()
+    button.toolbar__mobile-trigger.hamburger.hamburger--spin(type='button')
+      span.hamburger-box
+        span.hamburger-inner
   +wrapper('toolbar')
     .toolbar__item
       a.toolbar__item-descr(href="#") Услуги
@@ -42,10 +43,10 @@ nav.toolbar
       .toolbar__item-dropdown
         .toolbar__item-dropdown-block
           .toolbar__item-dropdown-menu
-            a.toolbar__item-dropdown-link(href="#") Наши проекты
-            a.toolbar__item-dropdown-link(href="#") Сертификаты
-            a.toolbar__item-dropdown-link(href="#") Отзывы
-            a.toolbar__item-dropdown-link(href="#") Публикации
+            a.toolbar__item-dropdown-link(href="/about.html#projects") Наши проекты
+            a.toolbar__item-dropdown-link(href="/about.html#certs") Сертификаты
+            a.toolbar__item-dropdown-link(href="/about.html#feedback") Отзывы
+            a.toolbar__item-dropdown-link(href="/news.html") Публикации
 
     .toolbar__item
       a.toolbar__item-descr(href="/contacts.html") Контакты

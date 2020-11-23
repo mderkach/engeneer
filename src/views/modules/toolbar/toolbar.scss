@@ -186,6 +186,10 @@
 
         display: block;
         color: #313638;
+
+        &:hover {
+          color: $red;
+        }
       }
 
       &-block {

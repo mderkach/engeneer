@@ -51,8 +51,12 @@
     color: #828282;
 
     &:hover {
-      text-decoration: underline;
-      cursor: pointer;
+      text-decoration: none;
+
+      a {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 

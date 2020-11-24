@@ -16,5 +16,7 @@ mixin formMessage(className, inputs)
           placeholder=input.placeholder
           rows='4'
         )
-    a.form-message-agreement(href="/agreement.pdf" target="_blank") Нажимая на кнопку, вы даете согласие на Обработку персональных данных
+    p.form-message-agreement
+      | Нажимая на кнопку, вы даете&nbsp;
+      a.form-message-agreement(href="/agreement.pdf" target="_blank") Cогласие на обработку персональных данных
     button.form-message-submit(type="submit") Отправить

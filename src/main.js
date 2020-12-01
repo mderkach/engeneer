@@ -9,6 +9,9 @@ import header from './views/modules/header/header';
 import footer from './views/modules/footer/footer';
 import toolbar from './views/modules/toolbar/toolbar';
 
+// disable submitting form, show example TY modal
+import './views/components/form/formSubmitAlert';
+
 document.addEventListener(
   'wheel',
   (e) => {

@@ -18,24 +18,23 @@ block content
             .contacts__cell_top
               +icon('icon', 'phone')
               a.contacts__cell_text.text-regular(href="tel:+74957617146") +7 (495) 761-71-46
-            p.contacts__cell_descr.text-small.light Заказать обратный звонок
+            a.contacts__cell_descr.text-small.light(href="#callback") Заказать обратный звонок
         .contacts__cell_wrapper
           .contacts__cell
             .contacts__cell_top
               +icon('icon', 'mail')
-              a.contacts__cell_text.text-regular(href="mailto:info@tс-engineer.ru") info@tс-engineer.ru
+              a.contacts__cell_text.text-regular(href="mailto:info@tс-engineer.ru" target="_blank") info@tс-engineer.ru
+        .contacts__cell_wrapper
+          .contacts__cell
+            .contacts__cell_top
+              +icon('icon', 'wa')
+              a.contacts__cell_text.text-regular(href="https://wa.me/+74957617146" target="_blank" rel="nofollow noreferrer") Написать в WhatsApp
         .contacts__cell_wrapper
           .contacts__cell
             .contacts__cell_top
               +icon('icon', 'placemark')
               p.contacts__cell_text.text-regular
-                | Фактический адрес:
-                br
-                | БЦ "БЦ "Сильвер Стоун", 129343 г.Москва, проезд
-                br
-                |Серебрякова, 14с23, этаж 2, офис 18.
-                br
-                | м.Ботанический
+                | г. Москва, проезд Серебрякова, 14/23, эт. 2, оф. 18
         .contacts__cell_wrapper
           .contacts__cell
             .contacts__cell_top
@@ -49,8 +48,11 @@ block content
         .contacts__cell_wrapper
           .contacts__cell
             .contacts__cell_top
-              +icon('icon', 'pdf')
-              a.contacts__cell_text.text-regular(href='#') Скачать реквизиты компании
+              +icon('icon', 'doc2')
+              .contacts__cell_text.text-regular
+                | ИНН 5038113193
+                br
+                | ОГРН 1155038003119
         .contacts__sep
         h2.contacts__heading.h2 Напишите нам
         +formMessage(slug+'__from', [

@@ -31,10 +31,22 @@
       border: 1px solid #e8e9eb;
       background: #fff;
 
+      &:hover {
+        cursor: pointer;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
       img {
         display: block;
         width: auto;
+        max-width: 60%;
         height: auto;
+        max-height: 60%;
+        transition: max-width 0.5s ease, max-height 0.5s ease;
       }
     }
   }

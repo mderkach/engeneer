@@ -1,5 +1,6 @@
 // core
 import GLightbox from 'glightbox';
+import 'glightbox/dist/css/glightbox.min.css';
 import form from '../../components/form/form';
 // style
 import './header.scss';

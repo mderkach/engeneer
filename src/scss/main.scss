@@ -10,6 +10,10 @@
 button {
   padding: 0;
   background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .is-modal-open {
@@ -27,4 +31,8 @@ button {
 .container {
   @include make-container();
   @include make-grid-container-max-widths();
+}
+
+.gslide-inline {
+  margin: 0 auto;
 }

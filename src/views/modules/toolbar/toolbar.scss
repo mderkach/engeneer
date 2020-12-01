@@ -110,15 +110,20 @@
         @include media-breakpoint-between(0, sm) {
           position: relative;
           top: -4px;
-          left: unset;
+          right: unset;
+          bottom: unset;
+          border: unset;
+          border-bottom: 1px solid #000;
         }
 
         position: absolute;
-        left: -200px;
+        right: 0;
+        bottom: -45px;
         display: block;
         width: 0;
         padding: rem(6);
-        border-bottom: 1px solid #000;
+        border: 5px solid #f2f2f2;
+        // border-bottom: 1px solid #000;
         background-color: #f2f2f2;
         color: #313638;
         opacity: 0;

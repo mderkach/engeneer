@@ -5,7 +5,10 @@ mixin fluid(header, descr, buttons)
       if block
         block
     .fluid-descr
-      h2.fluid-header.h2 !{header}
+      if (header.type && header.type === 'link')
+        a.fluid-header.h2(href=header.link) !{header.text}
+      else
+        h2.fluid-header.h2 !{header}
       if descr
         each item in descr
           p.fluid-text.text-big !{item}

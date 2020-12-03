@@ -1,7 +1,9 @@
-mixin form(className, header, descr, inputs, btnText)
+mixin form(className, header, descr, inputs, btnText, isModal, modalCloseClass)
   - className = className || null;
   - descr = descr || null;
   form.form(action="#" method="post" class=className)
+    if isModal
+      button.btn.form-close(class=modalCloseClass type="button") &times;
     h2.h2.form-header
       | !{ header }
     if descr

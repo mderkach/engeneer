@@ -7,6 +7,7 @@ import './header.scss';
 
 const header = {
   modal: '.header-modal-form',
+  close: '.header-modal-form-close',
   lightboxElTrigg: document.querySelector('a[href="#callback"]'),
   lightbox: GLightbox({
     selector: 'a[href="#callback"]',
@@ -16,6 +17,7 @@ const header = {
         width: 500,
       },
     ],
+    closeButton: false,
   }),
   lightboxOpened: false,
   init() {
@@ -36,6 +38,11 @@ const header = {
       this.lightboxElTrigg.addEventListener('click', () => {
         this.lightbox.open();
       });
+      document.querySelector(this.close).addEventListener('click', (e) => {
+        e.preventDefault();
+
+        this.lightbox.close();
+      });
     }
   },
 };
@@ -44,19 +51,28 @@ const header = {
 const modalOpts = {
   elements: [
     {
-      content:
-        '<h2 class="h2 medium" style="text-align: center">Спасибо за зявку!</h2> <p class="text-regular" style="text-align: center">Мы свяжемся с вами в ближайшее время</p> ',
+      content: document.querySelector('.header-ty'),
     },
   ],
+  closeButton: false,
   width: '80%',
   height: 'auto',
 };
 
 const modal = GLightbox(modalOpts);
+modal.on('open', () => {
+  document.querySelector('.header-ty').style.display = 'block';
+});
 
+document.querySelector('.header-ty-close').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  modal.close();
+});
+
+// disable forms submit and show ty instead
 document.querySelectorAll('form').forEach((item) => {
   item.addEventListener('submit', (e) => {
-    console.log(header);
     e.preventDefault();
     if (header.lightboxOpened) {
       header.lightboxOpened = false;

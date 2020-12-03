@@ -179,10 +179,18 @@
 
   &-modal {
     &-form {
+      position: relative;
       display: none;
       flex-direction: column;
       justify-content: center;
       height: 100%;
+
+      &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: rem(48);
+      }
 
       .form {
         padding: 0;
@@ -196,6 +204,16 @@
           flex-direction: column;
         }
       }
+    }
+  }
+
+  &-ty {
+    position: relative;
+    display: none;
+
+    button {
+      top: -40px;
+      right: -20px;
     }
   }
 }

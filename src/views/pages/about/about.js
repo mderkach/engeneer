@@ -14,6 +14,6 @@ import './about.scss';
 screenConsult.init();
 screenCallback.init();
 screenProjects.init();
-screenPartners.init();
+
 sliderFeedback.init();
 formMessage.init();

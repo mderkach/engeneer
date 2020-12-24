@@ -8,7 +8,7 @@ import './scss/main.scss';
 import header from './views/modules/header/header';
 import footer from './views/modules/footer/footer';
 import toolbar from './views/modules/toolbar/toolbar';
-
+import screenPartners from './views/components/screen/screenPartners';
 // disable submitting form, show example TY modal
 
 document.addEventListener(
@@ -33,3 +33,4 @@ document.addEventListener(
 // init components
 toolbar.init();
 header.init();
+screenPartners.init();

@@ -15,4 +15,3 @@ import './services.scss';
 // init
 sliderFluid.init();
 screenProjects.init();
-screenPartners.init();

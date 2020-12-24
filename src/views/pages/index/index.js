@@ -2,7 +2,7 @@
 // js, scss of components
 import button from '../../components/button/button';
 import screenConsult from '../../components/screen/screenConsult';
-import screenPartners from '../../components/screen/screenPartners';
+
 import screenCallback from '../../components/screen/screenCallback';
 import screenProjects from '../../components/screen/screenProjects';
 
@@ -13,4 +13,3 @@ import './index.scss';
 screenConsult.init();
 screenCallback.init();
 screenProjects.init();
-screenPartners.init();
